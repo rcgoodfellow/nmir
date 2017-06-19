@@ -2,7 +2,7 @@
 
 NMIR is a json based representation for networked system models. It is designed as an intermedieate representation to be generated and consumed by higher level languages. NMIR has the following format.
 
-```json
+```javascript
 net:
  id: uuid
  nodes: [node]
