@@ -2,7 +2,7 @@ package nmir
 
 import (
 	"encoding/json"
-	"fmt"
+	"io/ioutil"
 	"testing"
 )
 
@@ -47,6 +47,6 @@ func TestBuilModels(t *testing.T) {
 	}
 
 	buf, _ := json.MarshalIndent(host, "", "  ")
-	fmt.Println(string(buf))
+	ioutil.WriteFile("4net.json", buf, 0644)
 
 }
