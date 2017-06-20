@@ -10,8 +10,8 @@ function initCanvas() {
   theme = {
     background: 0xe0e0e0,
     node: 0x7ca8ef,
-    endpoint: 0x222222,
-    line: 0x444444
+    endpoint: 0x1a3a6d,
+    line: 0x142744
   }
 
   scene = new THREE.Scene();
