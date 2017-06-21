@@ -73,6 +73,8 @@ func (n *Node) Set(p Props) *Node {
 	return n
 }
 
+//TODO need to make it so we can crawl with local complexity
+
 type Link struct {
 	Id        string         `json:"id"`
 	Endpoints [2][]*Endpoint `json:"endpoints"`
@@ -96,4 +98,9 @@ func (e *Endpoint) Set(p Props) *Endpoint {
 		e.Props[k] = v
 	}
 	return e
+}
+
+type Neighbor struct {
+	Link *Link
+	Node *Node
 }

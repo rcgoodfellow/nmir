@@ -102,6 +102,15 @@ func expand(net *Net) {
 
 }
 
+func labelNodes(net *Net) {
+
+	for _, n := range net.Nodes {
+		for _, b := range n.Nbrs {
+		}
+	}
+
+}
+
 func angle(a, b *Node) float64 {
 
 	a_pos := a.Props["position"].(*Vec2)
