@@ -37,6 +37,20 @@ func (n *Net) Link() *Link {
 	return link
 }
 
+func (n *Net) GetNode(uuid string) *Node {
+	for _, x := range n.Nodes {
+		if x.Id == uuid {
+			return x
+		}
+		for _, e := range x.Endpoints {
+			if e.Id == uuid {
+				return x
+			}
+		}
+	}
+	return nil
+}
+
 type Node struct {
 	Id        string      `json:"id"`
 	Endpoints []*Endpoint `json:"endpoints"`

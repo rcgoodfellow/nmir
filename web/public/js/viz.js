@@ -39,9 +39,13 @@ function initCanvas() {
 
 function addNode(data, x, y) {
 
+  var node = new THREE.Group();
   var geometry = new THREE.CircleGeometry( 15, 32 );
   var material = new THREE.MeshBasicMaterial( { color: theme.node } );
-  var node = new THREE.Mesh( geometry, material );
+  var body = new THREE.Mesh( geometry, material );
+  body.position.z = 5;
+  node.add(body);
+
   node.data = data;
   node.name = data.id;
   node.position.x = x;
@@ -61,6 +65,7 @@ function addEndpoint(node, data) {
   var endpoint = new THREE.Mesh( geometry, material );
   endpoint.data = data;
   endpoint.name = data.id;
+  endpoint.z = 0;
   node.add( endpoint );
 
 }
