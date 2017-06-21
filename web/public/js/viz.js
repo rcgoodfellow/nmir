@@ -88,11 +88,16 @@ var render = function () {
 
 function initData() {
 
+  /*
   $.getJSON("https://mirror.deterlab.net/nmir/4net.json", (json) => {
     console.log(json);
     net = json;
     loadData();
   });
+  */
+
+  net = topo;
+  loadData();
 
 
 }
@@ -100,11 +105,11 @@ function initData() {
 function loadData() {
 
   net.nodes.forEach((node, i, ns) => {
-    var r = 100;
-    var y = r*Math.sin(i*(Math.PI/6));
-    var x = r*Math.cos(i*(Math.PI/6));
-    console.log("adding node "+node.props.name);
-    addNode(node, x ,y);
+    //var r = 100;
+    //var y = r*Math.sin(i*(Math.PI/6));
+    //var x = r*Math.cos(i*(Math.PI/6));
+    //console.log("adding node "+node.props.name);
+    addNode(node, node.props.position.x, node.props.position.y);
   });
 
   net.links.forEach((link, i, ls) => {

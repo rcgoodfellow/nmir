@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func TestBuilModels(t *testing.T) {
+func net4() Net {
 
 	host := NewNet()
 	zwitch := host.Node().Set(Props{"name": "leaf"})
@@ -46,7 +46,20 @@ func TestBuilModels(t *testing.T) {
 		[]*Endpoint{d.Endpoints[0]},
 	}
 
+	return host
+
+}
+
+func TestBuilModels(t *testing.T) {
+
+	host := net4()
+
 	buf, _ := json.MarshalIndent(host, "", "  ")
 	ioutil.WriteFile("4net.json", buf, 0644)
+
+	host_vt := VTag(host)
+
+	buf, _ = json.MarshalIndent(host_vt, "", "  ")
+	ioutil.WriteFile("4net_vt.json", buf, 0644)
 
 }
