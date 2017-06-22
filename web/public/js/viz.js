@@ -159,29 +159,12 @@ var render = function () {
 
 function initData() {
 
-  /*
-  $.getJSON("https://mirror.deterlab.net/nmir/4net.json", (json) => {
-    console.log(json);
-    net = json;
-    loadData();
-  });
-  */
-
   net = topo;
   loadData();
-
 
 }
 
 function loadData() {
-
-  /*
-  if(net.nets != null) {
-    net.nets.forEach((n, i, ns) => {
-      showNet(n);
-    });
-  }
-  */
 
   showNet(net, scene);
   

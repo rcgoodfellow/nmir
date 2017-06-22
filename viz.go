@@ -17,7 +17,7 @@ func init() {
 
 func VTag(net *Net) {
 
-	initialSpread(net, Vec2{0, 0})
+	initialSpread(net, &Vec2{0, 0})
 	for i := 0; i < 20; i++ {
 		layout(net)
 		log.Println(">>>---------->")
@@ -25,21 +25,22 @@ func VTag(net *Net) {
 
 }
 
-func initialSpread(net *Net, centroid Vec2) {
+func initialSpread(net *Net, centroid *Vec2) {
 
 	radius := 100.0
+	phase := math.Pi / -8.0
 	net.Props["position"] = centroid
 	increment := 2 * math.Pi / float64(len(net.Nets))
 
 	for i, n := range net.Nets {
 
-		angle := float64(i) * increment
+		angle := float64(i)*increment + phase
 		x := radius * math.Cos(angle)
 		y := radius * math.Sin(angle)
 		v := &Vec2{x, y}
 		n.Props["position"] = &Vec2{x, y}
 
-		initialSpread(n, *v)
+		initialSpread(n, v)
 
 	}
 
@@ -72,43 +73,44 @@ func contract(net *Net) {
 
 	for _, l := range net.Links {
 
-		if l.IsLocal() {
-			contract_local(l)
-		} else {
-			contract_nonlocal(l)
+		for _, p_ := range l.Endpoints[0] {
+			for _, q_ := range l.Endpoints[1] {
+				var p, q *Vec2
+
+				if l.IsLocal() {
+					p = p_.Parent.Props["position"].(*Vec2)
+					q = q_.Parent.Props["position"].(*Vec2)
+				} else {
+					p = p_.Parent.Parent.Props["position"].(*Vec2)
+					q = q_.Parent.Parent.Props["position"].(*Vec2)
+				}
+
+				theta := angle(p, q)
+
+				p.X -= lps.K * math.Cos(theta)
+				p.Y -= lps.K * math.Sin(theta)
+
+				theta -= math.Pi
+
+				q.X -= lps.K * math.Cos(theta)
+				q.Y -= lps.K * math.Sin(theta)
+			}
 		}
 
-	}
-
-}
-
-func contract_nonlocal(l *Link) {
-}
-
-func contract_local(l *Link) {
-
-	for _, p_ := range l.Endpoints[0] {
-		for _, q_ := range l.Endpoints[1] {
-			p := p_.Parent
-			q := q_.Parent
-
-			theta := angle(p, q)
-			p_pos := p.Props["position"].(*Vec2)
-			q_pos := q.Props["position"].(*Vec2)
-
-			p_pos.X -= lps.K * math.Cos(theta)
-			p_pos.Y -= lps.K * math.Sin(theta)
-
-			theta -= math.Pi
-
-			q_pos.X -= lps.K * math.Cos(theta)
-			q_pos.Y -= lps.K * math.Sin(theta)
-		}
 	}
 
 }
 
 func expand(net *Net) {
+
+	for _, a := range net.Nets {
+		for _, b := range net.Nets {
+			a_pos := a.Props["position"].(*Vec2)
+			b_pos := b.Props["position"].(*Vec2)
+
+			do_expand(a_pos, b_pos, lps.R*10)
+		}
+	}
 
 	for _, n := range net.Nets {
 		expand(n)
@@ -117,27 +119,31 @@ func expand(net *Net) {
 	for _, a := range net.Nodes {
 		for _, b := range net.Nodes {
 
-			if a == b {
-				continue
-			}
-
-			theta := angle(a, b)
-			dist := distance(a, b)
 			a_pos := a.Props["position"].(*Vec2)
 			b_pos := b.Props["position"].(*Vec2)
-			r := lps.R / dist
 
-			a_pos.X += r * math.Cos(theta)
-			a_pos.Y += r * math.Sin(theta)
-
-			theta -= math.Pi
-
-			b_pos.X += r * math.Cos(theta)
-			b_pos.Y += r * math.Sin(theta)
+			do_expand(a_pos, b_pos, lps.R)
 
 		}
 	}
 
+}
+
+func do_expand(a, b *Vec2, repel float64) {
+	if a == b {
+		return
+	}
+	theta := angle(a, b)
+	dist := distance(a, b)
+	r := repel / dist
+
+	a.X += r * math.Cos(theta)
+	a.Y += r * math.Sin(theta)
+
+	theta -= math.Pi
+
+	b.X += r * math.Cos(theta)
+	b.Y += r * math.Sin(theta)
 }
 
 func labelNodes(net *Net) {
@@ -200,13 +206,10 @@ func labelNodes(net *Net) {
 
 }
 
-func angle(a, b *Node) float64 {
+func angle(a, b *Vec2) float64 {
 
-	a_pos := a.Props["position"].(*Vec2)
-	b_pos := b.Props["position"].(*Vec2)
-
-	dx := a_pos.X - b_pos.X
-	dy := a_pos.Y - b_pos.Y
+	dx := a.X - b.X
+	dy := a.Y - b.Y
 
 	theta := math.Atan2(dy, dx)
 	if theta < 0 {
@@ -217,13 +220,10 @@ func angle(a, b *Node) float64 {
 
 }
 
-func distance(a, b *Node) float64 {
+func distance(a, b *Vec2) float64 {
 
-	a_pos := a.Props["position"].(*Vec2)
-	b_pos := b.Props["position"].(*Vec2)
-
-	dx := a_pos.X - b_pos.X
-	dy := a_pos.Y - b_pos.Y
+	dx := a.X - b.X
+	dy := a.Y - b.Y
 
 	return math.Sqrt(dx*dx + dy*dy)
 
