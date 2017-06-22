@@ -4,20 +4,60 @@ import (
 	"github.com/satori/go.uuid"
 )
 
+// Data structures ------------------------------------------------------------
+
 type Props map[string]interface{}
 
 type Net struct {
-	Id    string  `json:"id"`
-	Nodes []*Node `json:"nodes"`
-	Links []*Link `json:"links"`
-	Nets  []*Net  `json:"nets"`
-	Props Props   `json:"props"`
+	Id     string  `json:"id"`
+	Nodes  []*Node `json:"nodes"`
+	Links  []*Link `json:"links"`
+	Nets   []*Net  `json:"nets"`
+	Props  Props   `json:"props"`
+	Parent *Net    `json:"-"`
 }
+
+type Node struct {
+	Id        string      `json:"id"`
+	Endpoints []*Endpoint `json:"endpoints"`
+	Props     Props       `json:"props"`
+	Parent    *Net        `json:"-"`
+}
+
+type Link struct {
+	Id        string         `json:"id"`
+	Endpoints [2][]*Endpoint `json:"endpoints"`
+	Props     Props          `json:"props"`
+}
+
+type Endpoint struct {
+	Id        string               `json:"id"`
+	Props     Props                `json:"props"`
+	Neighbors map[string]*Neighbor `json:"-"`
+	Parent    *Node                `json:"-"`
+}
+
+type Neighbor struct {
+	Link     *Link
+	Endpoint *Endpoint
+}
+
+// Net methods ----------------------------------------------------------------
+
+// Factory methods ~~~
 
 func NewNet() *Net {
 	return &Net{
 		Id:    uuid.NewV4().String(),
 		Props: make(Props),
+	}
+}
+
+func (n *Net) Net() *Net {
+	return &Net{
+		Id:     uuid.NewV4().String(),
+		Props:  make(Props),
+		Parent: n,
 	}
 }
 
@@ -43,15 +83,7 @@ func (n *Net) Link(a, b []*Endpoint) *Link {
 	return link
 }
 
-func setNeighbors(link *Link, a, b []*Endpoint) {
-	for _, x := range a {
-		for _, y := range b {
-			x.Neighbors[y.Id] = &Neighbor{link, y}
-			y.Neighbors[x.Id] = &Neighbor{link, x}
-		}
-	}
-
-}
+// Search methods ~~~
 
 func (n *Net) GetNode(uuid string) *Node {
 	for _, x := range n.Nodes {
@@ -81,12 +113,7 @@ func (n *Net) GetNodeByName(name string) *Node {
 	return nil
 }
 
-type Node struct {
-	Id        string      `json:"id"`
-	Endpoints []*Endpoint `json:"endpoints"`
-	Props     Props       `json:"props"`
-	Parent    *Net        `json:"-"`
-}
+// Node methods ---------------------------------------------------------------
 
 func (n *Node) Endpoint() *Endpoint {
 	ep := &Endpoint{
@@ -106,18 +133,14 @@ func (n *Node) Set(p Props) *Node {
 	return n
 }
 
-type Link struct {
-	Id        string         `json:"id"`
-	Endpoints [2][]*Endpoint `json:"endpoints"`
-	Props     Props          `json:"props"`
-}
-
 func (l *Link) Set(p Props) *Link {
 	for k, v := range p {
 		l.Props[k] = v
 	}
 	return l
 }
+
+// Link methods ---------------------------------------------------------------
 
 func (l *Link) IsLocal() bool {
 
@@ -127,12 +150,7 @@ func (l *Link) IsLocal() bool {
 
 }
 
-type Endpoint struct {
-	Id        string               `json:"id"`
-	Props     Props                `json:"props"`
-	Neighbors map[string]*Neighbor `json:"-"`
-	Parent    *Node                `json:"-"`
-}
+// Endpoint methods -----------------------------------------------------------
 
 func (e *Endpoint) Set(p Props) *Endpoint {
 	for k, v := range p {
@@ -141,7 +159,14 @@ func (e *Endpoint) Set(p Props) *Endpoint {
 	return e
 }
 
-type Neighbor struct {
-	Link     *Link
-	Endpoint *Endpoint
+// helpers ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+func setNeighbors(link *Link, a, b []*Endpoint) {
+	for _, x := range a {
+		for _, y := range b {
+			x.Neighbors[y.Id] = &Neighbor{link, y}
+			y.Neighbors[x.Id] = &Neighbor{link, x}
+		}
+	}
+
 }
