@@ -11,18 +11,21 @@ type Net struct {
 	Nodes []*Node `json:"nodes"`
 	Links []*Link `json:"links"`
 	Nets  []*Net  `json:"nets"`
+	Props Props   `json:"props"`
 }
 
-func NewNet() Net {
-	return Net{
-		Id: uuid.NewV4().String(),
+func NewNet() *Net {
+	return &Net{
+		Id:    uuid.NewV4().String(),
+		Props: make(Props),
 	}
 }
 
 func (n *Net) Node() *Node {
 	node := &Node{
-		Id:    uuid.NewV4().String(),
-		Props: make(Props),
+		Id:     uuid.NewV4().String(),
+		Props:  make(Props),
+		Parent: n,
 	}
 	n.Nodes = append(n.Nodes, node)
 	return node
@@ -36,6 +39,7 @@ func (n *Net) Link(a, b []*Endpoint) *Link {
 	}
 	setNeighbors(link, a, b)
 	n.Links = append(n.Links, link)
+	link.Props["local"] = link.IsLocal()
 	return link
 }
 
@@ -63,10 +67,25 @@ func (n *Net) GetNode(uuid string) *Node {
 	return nil
 }
 
+func (n *Net) GetNodeByName(name string) *Node {
+	for _, x := range n.Nodes {
+		if x.Props["name"] == name {
+			return x
+		}
+		for _, e := range x.Endpoints {
+			if e.Props["name"] == name {
+				return x
+			}
+		}
+	}
+	return nil
+}
+
 type Node struct {
 	Id        string      `json:"id"`
 	Endpoints []*Endpoint `json:"endpoints"`
 	Props     Props       `json:"props"`
+	Parent    *Net        `json:"-"`
 }
 
 func (n *Node) Endpoint() *Endpoint {
@@ -98,6 +117,14 @@ func (l *Link) Set(p Props) *Link {
 		l.Props[k] = v
 	}
 	return l
+}
+
+func (l *Link) IsLocal() bool {
+
+	return len(l.Endpoints[0]) == 0 ||
+		len(l.Endpoints[1]) == 0 ||
+		l.Endpoints[0][0].Parent.Parent.Id == l.Endpoints[1][0].Parent.Parent.Id
+
 }
 
 type Endpoint struct {

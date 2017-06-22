@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func net4() Net {
+func net4() *Net {
 
 	host := NewNet()
 	zwitch := host.Node().Set(Props{"name": "leaf"})
@@ -50,16 +50,48 @@ func net4() Net {
 
 }
 
-func TestBuilModels(t *testing.T) {
+func TestModelA(t *testing.T) {
 
-	host := net4()
+	a := net4()
 
-	buf, _ := json.MarshalIndent(host, "", "  ")
+	buf, _ := json.MarshalIndent(a, "", "  ")
 	ioutil.WriteFile("4net.json", buf, 0644)
 
-	host_vt := VTag(host)
+	VTag(a)
 
-	buf, _ = json.MarshalIndent(host_vt, "", "  ")
+	buf, _ = json.MarshalIndent(a, "", "  ")
 	ioutil.WriteFile("4net_vt.json", buf, 0644)
+
+}
+
+func TestModelAB(t *testing.T) {
+
+	a := net4()
+	b := net4()
+
+	ab := NewNet()
+	ab.Nets = append(ab.Nets, a)
+	ab.Nets = append(ab.Nets, b)
+
+	ta := a.GetNodeByName("leaf").Endpoint().Set(Props{"bandwidth": "10G"})
+	tb := b.GetNodeByName("leaf").Endpoint().Set(Props{"bandwidth": "10G"})
+	ab.Link(
+		[]*Endpoint{ta},
+		[]*Endpoint{tb},
+	)
+
+	buf, err := json.MarshalIndent(ab, "", "  ")
+	if err != nil {
+		t.Fatal(err)
+	}
+	ioutil.WriteFile("44net.json", buf, 0644)
+
+	VTag(ab)
+
+	buf, err = json.MarshalIndent(ab, "", "  ")
+	if err != nil {
+		t.Fatal(err)
+	}
+	ioutil.WriteFile("44net_vt.json", buf, 0644)
 
 }

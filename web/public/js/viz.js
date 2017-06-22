@@ -9,10 +9,16 @@ function initCanvas() {
   var height = window.innerHeight;
   theme = {
     background: 0xe0e0e0,
-    node: 0x7ca8ef,
-    endpoint: 0x1a3a6d,
-    line: 0x142744,
+
+    node_color: 0x7ca8ef,
     node_size: 10,
+
+    endpoint_color: 0x1a3a6d,
+
+    line_color: 0x142744,
+    line_opacity: 0.9,
+    line_width: 2,
+
     label_offset: 10
   }
 
@@ -39,11 +45,11 @@ function initCanvas() {
 
 }
 
-function addNode(data, x, y) {
+function addNode(data, x, y, g) {
 
   var node = new THREE.Group();
   var geometry = new THREE.CircleGeometry( theme.node_size, 32 );
-  var material = new THREE.MeshBasicMaterial( { color: theme.node } );
+  var material = new THREE.MeshBasicMaterial( { color: theme.node_color } );
   var body = new THREE.Mesh( geometry, material );
   body.position.z = 5;
   node.add(body);
@@ -52,7 +58,7 @@ function addNode(data, x, y) {
   node.name = data.id;
   node.position.x = x;
   node.position.y = y;
-  scene.add( node );
+  g.add( node );
 
   data.endpoints.forEach((endpoint, i, es) => {
     addEndpoint(node, endpoint);
@@ -68,6 +74,8 @@ function htmlXY(node) {
   var canvas = renderer.domElement;
 
   // map to normalized device coordinate (NDC) space
+  node.parent.updateMatrixWorld();
+  vector.setFromMatrixPosition(node.matrixWorld);
   vector.project( camera );
   
   // map to 2D screen space
@@ -109,7 +117,7 @@ function addLabel(node) {
 function addEndpoint(node, data) {
 
   var geometry = new THREE.CircleGeometry( 3, 16 );
-  var material = new THREE.MeshBasicMaterial( { color: theme.endpoint } );
+  var material = new THREE.MeshBasicMaterial( { color: theme.endpoint_color } );
   var endpoint = new THREE.Mesh( geometry, material );
   endpoint.data = data;
   endpoint.name = data.id;
@@ -118,18 +126,28 @@ function addEndpoint(node, data) {
 
 }
 
-function addLinkLine(data, x, y) {
+function addLinkLine(lnk, x, y, g) {
 
   var material = new THREE.LineBasicMaterial({ 
-    linewidth: 2,
-    opacity: 0.9,
-    color: theme.line 
+    linewidth: theme.line_width,
+    opacity: theme.line_opacity,
+    color: theme.line_color
   });
   var geometry = new THREE.Geometry();
-  geometry.vertices.push(x.parent.position);
-  geometry.vertices.push(y.parent.position);
+  g.updateMatrixWorld();
+
+  var xp = x.parent.position.clone();
+  var yp = y.parent.position.clone();
+  
+  if(!lnk.props.local) {
+    xp.setFromMatrixPosition(x.matrixWorld);
+    yp.setFromMatrixPosition(y.matrixWorld);
+  }
+
+  geometry.vertices.push(xp);
+  geometry.vertices.push(yp);
   var line = new THREE.Line(geometry, material);
-  scene.add( line );
+  g.add( line );
 
 }
 
@@ -157,25 +175,53 @@ function initData() {
 
 function loadData() {
 
-  net.nodes.forEach((node, i, ns) => {
-    //var r = 100;
-    //var y = r*Math.sin(i*(Math.PI/6));
-    //var x = r*Math.cos(i*(Math.PI/6));
-    //console.log("adding node "+node.props.name);
-    addNode(node, node.props.position.x, node.props.position.y);
-  });
-
-  net.links.forEach((link, i, ls) => {
-    link.endpoints[0].forEach((a, i, es) => {
-      link.endpoints[1].forEach((b, i, es) => {
-        var na = scene.getObjectByName(a.id);
-        var nb = scene.getObjectByName(b.id);
-        addLinkLine(link, na, nb);
-      });
+  /*
+  if(net.nets != null) {
+    net.nets.forEach((n, i, ns) => {
+      showNet(n);
     });
-  });
+  }
+  */
+
+  showNet(net, scene);
   
   console.log(scene);
+
+}
+
+function showNet(net, parent) {
+
+  var g = new THREE.Group();
+  g.position.x = net.props.position.x
+  g.position.y = net.props.position.y
+  parent.add( g );
+
+  if(net.nets != null) {
+    net.nets.forEach((n, i, ns) => {
+      showNet(n, g)
+    });
+  }
+
+
+  if(net.nodes != null) {
+    net.nodes.forEach((node, i, ns) => {
+      addNode(node, node.props.position.x, node.props.position.y, g);
+    });
+  }
+
+
+  if(net.links != null) {
+    net.links.forEach((link, i, ls) => {
+      link.endpoints[0].forEach((a, i, es) => {
+        link.endpoints[1].forEach((b, i, es) => {
+          var na = parent.getObjectByName(a.id);
+          var nb = parent.getObjectByName(b.id);
+          addLinkLine(link, na, nb, g);
+        });
+      });
+    });
+  }
+
 
 }
 
