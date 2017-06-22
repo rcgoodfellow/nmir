@@ -67,6 +67,8 @@ func layout(net *Net) {
 
 func contract(net *Net) {
 
+	log.Println("contract start")
+
 	for _, n := range net.Nets {
 		contract(n)
 	}
@@ -99,9 +101,13 @@ func contract(net *Net) {
 
 	}
 
+	log.Println("contract finish")
+
 }
 
 func expand(net *Net) {
+
+	log.Println("expand start")
 
 	for _, a := range net.Nets {
 		for _, b := range net.Nets {
@@ -116,6 +122,7 @@ func expand(net *Net) {
 		expand(n)
 	}
 
+	//n^2 BAD FIX
 	for _, a := range net.Nodes {
 		for _, b := range net.Nodes {
 
@@ -126,6 +133,8 @@ func expand(net *Net) {
 
 		}
 	}
+
+	log.Println("expand finish")
 
 }
 
