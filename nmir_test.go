@@ -26,25 +26,25 @@ func net4() Net {
 	d := host.Node().Set(Props{"name": "d"})
 	d.Endpoint().Set(Props{"bandwidth": "1G"})
 
-	host.Link().Endpoints = [2][]*Endpoint{
+	host.Link(
 		[]*Endpoint{zwitch.Endpoints[0]},
 		[]*Endpoint{a.Endpoints[0]},
-	}
+	)
 
-	host.Link().Endpoints = [2][]*Endpoint{
+	host.Link(
 		[]*Endpoint{zwitch.Endpoints[1]},
 		[]*Endpoint{b.Endpoints[0]},
-	}
+	)
 
-	host.Link().Endpoints = [2][]*Endpoint{
+	host.Link(
 		[]*Endpoint{zwitch.Endpoints[2]},
 		[]*Endpoint{c.Endpoints[0]},
-	}
+	)
 
-	host.Link().Endpoints = [2][]*Endpoint{
+	host.Link(
 		[]*Endpoint{zwitch.Endpoints[3]},
 		[]*Endpoint{d.Endpoints[0]},
-	}
+	)
 
 	return host
 

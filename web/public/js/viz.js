@@ -11,7 +11,9 @@ function initCanvas() {
     background: 0xe0e0e0,
     node: 0x7ca8ef,
     endpoint: 0x1a3a6d,
-    line: 0x142744
+    line: 0x142744,
+    node_size: 10,
+    label_offset: 10
   }
 
   scene = new THREE.Scene();
@@ -40,7 +42,7 @@ function initCanvas() {
 function addNode(data, x, y) {
 
   var node = new THREE.Group();
-  var geometry = new THREE.CircleGeometry( 15, 32 );
+  var geometry = new THREE.CircleGeometry( theme.node_size, 32 );
   var material = new THREE.MeshBasicMaterial( { color: theme.node } );
   var body = new THREE.Mesh( geometry, material );
   body.position.z = 5;
@@ -55,7 +57,53 @@ function addNode(data, x, y) {
   data.endpoints.forEach((endpoint, i, es) => {
     addEndpoint(node, endpoint);
   });
+  
+  addLabel(node)
 
+}
+
+function htmlXY(node) {
+
+  var vector = node.position.clone();
+  var canvas = renderer.domElement;
+
+  // map to normalized device coordinate (NDC) space
+  vector.project( camera );
+  
+  // map to 2D screen space
+  vector.x = Math.round( (   vector.x + 1 ) * canvas.width  / 2 );
+  vector.y = Math.round( ( - vector.y + 1 ) * canvas.height / 2 );
+  vector.z = 0;
+
+  return vector
+
+}
+
+function addLabel(node) {
+
+  var vec = htmlXY(node);
+  x = vec.x;
+  y = vec.y;
+
+  theta = node.data.props.label_angle;
+  x += theme.label_offset*Math.cos(theta)
+  y -= theme.label_offset*Math.sin(theta)
+
+  var text = node.data.props.name;
+
+  var label = document.createElement('div');
+  label.classList.add('nodelabel');
+  label.style.position = 'absolute';
+  label.style.zIndex = 5;
+  label.innerHTML = text;
+  label.style.top = y + 'px';
+  label.style.left = x + 'px';
+  document.body.appendChild(label);
+
+  h = label.clientHeight;
+  w = label.clientWidth;
+
+  label.style.top = (y - h) + 'px';
 }
 
 function addEndpoint(node, data) {

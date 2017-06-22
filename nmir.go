@@ -28,13 +28,25 @@ func (n *Net) Node() *Node {
 	return node
 }
 
-func (n *Net) Link() *Link {
+func (n *Net) Link(a, b []*Endpoint) *Link {
 	link := &Link{
-		Id:    uuid.NewV4().String(),
-		Props: make(Props),
+		Id:        uuid.NewV4().String(),
+		Props:     make(Props),
+		Endpoints: [2][]*Endpoint{a, b},
 	}
+	setNeighbors(link, a, b)
 	n.Links = append(n.Links, link)
 	return link
+}
+
+func setNeighbors(link *Link, a, b []*Endpoint) {
+	for _, x := range a {
+		for _, y := range b {
+			x.Neighbors[y.Id] = &Neighbor{link, y}
+			y.Neighbors[x.Id] = &Neighbor{link, x}
+		}
+	}
+
 }
 
 func (n *Net) GetNode(uuid string) *Node {
@@ -59,8 +71,10 @@ type Node struct {
 
 func (n *Node) Endpoint() *Endpoint {
 	ep := &Endpoint{
-		Id:    uuid.NewV4().String(),
-		Props: make(Props),
+		Id:        uuid.NewV4().String(),
+		Props:     make(Props),
+		Neighbors: make(map[string]*Neighbor),
+		Parent:    n,
 	}
 	n.Endpoints = append(n.Endpoints, ep)
 	return ep
@@ -72,8 +86,6 @@ func (n *Node) Set(p Props) *Node {
 	}
 	return n
 }
-
-//TODO need to make it so we can crawl with local complexity
 
 type Link struct {
 	Id        string         `json:"id"`
@@ -89,8 +101,10 @@ func (l *Link) Set(p Props) *Link {
 }
 
 type Endpoint struct {
-	Id    string `json:"id"`
-	Props Props  `json:"props"`
+	Id        string               `json:"id"`
+	Props     Props                `json:"props"`
+	Neighbors map[string]*Neighbor `json:"-"`
+	Parent    *Node                `json:"-"`
 }
 
 func (e *Endpoint) Set(p Props) *Endpoint {
@@ -101,6 +115,6 @@ func (e *Endpoint) Set(p Props) *Endpoint {
 }
 
 type Neighbor struct {
-	Link *Link
-	Node *Node
+	Link     *Link
+	Endpoint *Endpoint
 }
