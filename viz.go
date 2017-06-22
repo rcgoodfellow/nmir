@@ -18,7 +18,7 @@ func init() {
 func VTag(net *Net) {
 
 	initialSpread(net, &Vec2{0, 0})
-	for i := 0; i < 20; i++ {
+	for i := 0; i < 10; i++ {
 		layout(net)
 		log.Println(">>>---------->")
 	}
@@ -122,14 +122,26 @@ func expand(net *Net) {
 		expand(n)
 	}
 
-	//n^2 BAD FIX
-	for _, a := range net.Nodes {
-		for _, b := range net.Nodes {
+	for _, x := range net.Nodes {
 
-			a_pos := a.Props["position"].(*Vec2)
-			b_pos := b.Props["position"].(*Vec2)
+		o := x.Props["position"].(*Vec2)
 
-			do_expand(a_pos, b_pos, lps.R)
+		for _, e := range x.Endpoints {
+
+			for _, n := range e.Neighbors {
+
+				p := n.Endpoint.Parent.Props["position"].(*Vec2)
+				do_expand(o, p, lps.R)
+
+				for _, m := range e.Neighbors {
+					if n == m {
+						continue
+					}
+					q := m.Endpoint.Parent.Props["position"].(*Vec2)
+					do_expand(p, q, lps.R)
+				}
+
+			}
 
 		}
 	}

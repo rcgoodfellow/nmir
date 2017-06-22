@@ -2,6 +2,9 @@
 
 var camera, scene, renderer, theme;
 var net;
+var node_geometry, node_material;
+var endpoint_geometry, endpoint_material;
+var line_geom, line_material;
 
 function initCanvas() {
 
@@ -42,15 +45,27 @@ function initCanvas() {
 
 
   camera.position.z = 100;
+  node_geometry = new THREE.CircleGeometry( theme.node_size, 32 );
+  node_material = new THREE.MeshBasicMaterial( { color: theme.node_color } );
+
+  endpoint_geometry = new THREE.CircleGeometry( 3, 16 );
+  endpoint_material = new THREE.MeshBasicMaterial( { color: theme.endpoint_color } );
+
+  line_material = new THREE.LineBasicMaterial({ 
+    linewidth: theme.line_width,
+    opacity: theme.line_opacity,
+    color: theme.line_color
+  });
+
+  line_geometry = new THREE.Geometry();
 
 }
+  
 
 function addNode(data, x, y, g) {
 
   var node = new THREE.Group();
-  var geometry = new THREE.CircleGeometry( theme.node_size, 32 );
-  var material = new THREE.MeshBasicMaterial( { color: theme.node_color } );
-  var body = new THREE.Mesh( geometry, material );
+  var body = new THREE.Mesh( node_geometry, node_material );
   body.position.z = 5;
   node.add(body);
 
@@ -64,7 +79,7 @@ function addNode(data, x, y, g) {
     addEndpoint(node, endpoint);
   });
   
-  addLabel(node)
+  //addLabel(node)
 
 }
 
@@ -116,10 +131,9 @@ function addLabel(node) {
 
 function addEndpoint(node, data) {
 
-  var geometry = new THREE.CircleGeometry( 3, 16 );
-  var material = new THREE.MeshBasicMaterial( { color: theme.endpoint_color } );
-  var endpoint = new THREE.Mesh( geometry, material );
+  var endpoint = new THREE.Mesh( endpoint_geometry, endpoint_material );
   endpoint.data = data;
+  data.obj3 = endpoint;
   endpoint.name = data.id;
   endpoint.z = 0;
   node.add( endpoint );
@@ -128,25 +142,23 @@ function addEndpoint(node, data) {
 
 function addLinkLine(lnk, x, y, g) {
 
-  var material = new THREE.LineBasicMaterial({ 
-    linewidth: theme.line_width,
-    opacity: theme.line_opacity,
-    color: theme.line_color
-  });
-  var geometry = new THREE.Geometry();
+  var geometry = new THREE.BufferGeometry();
+  var positions = new Float32Array(2*3);
+  geometry.addAttribute('position', new THREE.BufferAttribute(positions, 2));
   g.updateMatrixWorld();
 
   var xp = x.parent.position.clone();
   var yp = y.parent.position.clone();
   
   if(!lnk.props.local) {
+    return;
     xp.setFromMatrixPosition(x.matrixWorld);
     yp.setFromMatrixPosition(y.matrixWorld);
   }
 
-  geometry.vertices.push(xp);
-  geometry.vertices.push(yp);
-  var line = new THREE.Line(geometry, material);
+  line_geometry.vertices.push(xp);
+  line_geometry.vertices.push(yp);
+  var line = new THREE.Line(geometry, line_material);
   g.add( line );
 
 }
@@ -197,12 +209,19 @@ function showNet(net, parent) {
     net.links.forEach((link, i, ls) => {
       link.endpoints[0].forEach((a, i, es) => {
         link.endpoints[1].forEach((b, i, es) => {
-          var na = parent.getObjectByName(a.id);
-          var nb = parent.getObjectByName(b.id);
+          console.log('muffin');
+          //var na = parent.getObjectByName(a.id);
+          //var nb = parent.getObjectByName(b.id);
+          var na = a.obj3;
+          var nb = b.obj3;
           addLinkLine(link, na, nb, g);
         });
       });
     });
+
+    return;
+    var line = new THREE.LineSegments(line_geometry, line_material);
+    g.add( line );
   }
 
 

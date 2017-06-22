@@ -1,29 +1,29 @@
 {
-  "id": "74512882-481f-414f-9b23-f869ab7e7684",
+  "id": "efb11de2-8202-4c28-90ae-dcd036303f1c",
   "nodes": [
     {
-      "id": "af95fbbd-6b7f-4420-918e-aad3e703bb9e",
+      "id": "aa2521cf-ef88-49ea-830c-3a0195ee92ef",
       "endpoints": [
         {
-          "id": "2b50b6a5-6df5-4506-89da-4ecfe8832c1e",
+          "id": "da033e7a-60ca-4acb-a721-9b828d358d63",
           "props": {
             "bandwidth": "1G"
           }
         },
         {
-          "id": "8509a83d-acac-4657-b16b-4e178edac942",
+          "id": "57c5e65b-b665-4856-bf32-558dd70e5d08",
           "props": {
             "bandwidth": "1G"
           }
         },
         {
-          "id": "19c60d19-b16c-44eb-b5f5-bae26bee5e87",
+          "id": "21440d8c-6122-4c4d-a264-ed3f9684b5ef",
           "props": {
             "bandwidth": "1G"
           }
         },
         {
-          "id": "f3feba18-a32a-49c7-a7b8-cf22b3a95d00",
+          "id": "ab3e9e2e-0dc5-4dc9-b264-c1ff5ed2fadb",
           "props": {
             "bandwidth": "1G"
           }
@@ -33,16 +33,16 @@
         "label_angle": 0.7853981633974483,
         "name": "leaf",
         "position": {
-          "x": -1.8429227646488024,
-          "y": -6.346871562477123
+          "x": 1.6584260499664096,
+          "y": -7.937575779214834
         }
       }
     },
     {
-      "id": "1dd8d3a8-5707-4612-b636-099a685f9286",
+      "id": "4a2fc9f7-9d70-4d35-98e1-11ca29857448",
       "endpoints": [
         {
-          "id": "99eff251-259c-4b20-b75b-67d37f528872",
+          "id": "98291567-3332-4475-8263-700a6942ac3a",
           "props": {
             "bandwidth": "1G"
           }
@@ -52,16 +52,16 @@
         "label_angle": 0.7853981633974483,
         "name": "a",
         "position": {
-          "x": 48.903599214667494,
-          "y": 35.59715200452758
+          "x": 27.84160730572534,
+          "y": 31.86293323028236
         }
       }
     },
     {
-      "id": "da06cef3-d71d-4121-b34f-0718dbfdcdf3",
+      "id": "f3524459-5bef-442f-810f-0f27971ad7d3",
       "endpoints": [
         {
-          "id": "3e5152bb-e03b-4b54-8ca4-675af0562201",
+          "id": "1fcd3f12-6d1d-442b-b1aa-c24d0948feef",
           "props": {
             "bandwidth": "1G"
           }
@@ -71,16 +71,16 @@
         "label_angle": 0.7853981633974483,
         "name": "b",
         "position": {
-          "x": -23.407554636572545,
-          "y": 47.36649401461929
+          "x": -15.167261598627332,
+          "y": 30.827700253941053
         }
       }
     },
     {
-      "id": "608896a2-ba8d-44a7-a0c4-5ef611240bff",
+      "id": "b7e28444-c7f3-4e85-a6b2-3d03be9f0458",
       "endpoints": [
         {
-          "id": "4aadf961-188f-421f-b55c-2abb73011237",
+          "id": "4cce6336-12c2-4a11-87db-343c10d82b7b",
           "props": {
             "bandwidth": "1G"
           }
@@ -90,16 +90,16 @@
         "label_angle": 0.7853981633974483,
         "name": "c",
         "position": {
-          "x": -54.30686253185146,
-          "y": -23.350537567376232
+          "x": -34.194718797636604,
+          "y": -13.928700089773313
         }
       }
     },
     {
-      "id": "fbc6b9e2-f68e-4096-841e-f9d4417de140",
+      "id": "7649b1b5-2315-4980-9b1c-ef32ae808ec2",
       "endpoints": [
         {
-          "id": "3350b1c0-8054-4f86-8130-03fd7531ce07",
+          "id": "0121c155-5c64-4ab5-848b-7adda20a99ec",
           "props": {
             "bandwidth": "1G"
           }
@@ -109,19 +109,19 @@
         "label_angle": 0.7853981633974483,
         "name": "d",
         "position": {
-          "x": 30.653740718405306,
-          "y": -53.26623688929353
+          "x": 19.86194704057217,
+          "y": -40.82435761523522
         }
       }
     }
   ],
   "links": [
     {
-      "id": "d5c72d91-827d-4d4f-9d6b-4b73063c7057",
+      "id": "240c9872-c91b-4c74-ba19-f87f6c10d486",
       "endpoints": [
         [
           {
-            "id": "2b50b6a5-6df5-4506-89da-4ecfe8832c1e",
+            "id": "da033e7a-60ca-4acb-a721-9b828d358d63",
             "props": {
               "bandwidth": "1G"
             }
@@ -129,7 +129,7 @@
         ],
         [
           {
-            "id": "99eff251-259c-4b20-b75b-67d37f528872",
+            "id": "98291567-3332-4475-8263-700a6942ac3a",
             "props": {
               "bandwidth": "1G"
             }
@@ -141,11 +141,11 @@
       }
     },
     {
-      "id": "2bc20bcb-7da9-487c-b67c-f9a228a31347",
+      "id": "941aec8a-0b56-4db5-a988-48a421b0c3e6",
       "endpoints": [
         [
           {
-            "id": "8509a83d-acac-4657-b16b-4e178edac942",
+            "id": "57c5e65b-b665-4856-bf32-558dd70e5d08",
             "props": {
               "bandwidth": "1G"
             }
@@ -153,7 +153,7 @@
         ],
         [
           {
-            "id": "3e5152bb-e03b-4b54-8ca4-675af0562201",
+            "id": "1fcd3f12-6d1d-442b-b1aa-c24d0948feef",
             "props": {
               "bandwidth": "1G"
             }
@@ -165,11 +165,11 @@
       }
     },
     {
-      "id": "71103363-b86d-4ea2-b1ea-b3b332b2d7b0",
+      "id": "fd0a3733-c274-4606-8b5d-a6230ac123c9",
       "endpoints": [
         [
           {
-            "id": "19c60d19-b16c-44eb-b5f5-bae26bee5e87",
+            "id": "21440d8c-6122-4c4d-a264-ed3f9684b5ef",
             "props": {
               "bandwidth": "1G"
             }
@@ -177,7 +177,7 @@
         ],
         [
           {
-            "id": "4aadf961-188f-421f-b55c-2abb73011237",
+            "id": "4cce6336-12c2-4a11-87db-343c10d82b7b",
             "props": {
               "bandwidth": "1G"
             }
@@ -189,11 +189,11 @@
       }
     },
     {
-      "id": "cab840a6-226c-4d02-945f-39608bc6ad2e",
+      "id": "ba3f0e4f-ba9e-473f-b90b-530e69b8ccc7",
       "endpoints": [
         [
           {
-            "id": "f3feba18-a32a-49c7-a7b8-cf22b3a95d00",
+            "id": "ab3e9e2e-0dc5-4dc9-b264-c1ff5ed2fadb",
             "props": {
               "bandwidth": "1G"
             }
@@ -201,7 +201,7 @@
         ],
         [
           {
-            "id": "3350b1c0-8054-4f86-8130-03fd7531ce07",
+            "id": "0121c155-5c64-4ab5-848b-7adda20a99ec",
             "props": {
               "bandwidth": "1G"
             }
