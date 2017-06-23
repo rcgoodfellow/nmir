@@ -133,11 +133,12 @@ func (n *Node) Set(p Props) *Node {
 	return n
 }
 
-func (l *Link) Set(p Props) *Link {
-	for k, v := range p {
-		l.Props[k] = v
+func (n *Node) Valence() int {
+	v := 0
+	for _, e := range n.Endpoints {
+		v += len(e.Neighbors)
 	}
-	return l
+	return v
 }
 
 // Link methods ---------------------------------------------------------------
@@ -148,6 +149,13 @@ func (l *Link) IsLocal() bool {
 		len(l.Endpoints[1]) == 0 ||
 		l.Endpoints[0][0].Parent.Parent.Id == l.Endpoints[1][0].Parent.Parent.Id
 
+}
+
+func (l *Link) Set(p Props) *Link {
+	for k, v := range p {
+		l.Props[k] = v
+	}
+	return l
 }
 
 // Endpoint methods -----------------------------------------------------------

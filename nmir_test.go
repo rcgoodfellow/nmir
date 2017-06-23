@@ -57,10 +57,15 @@ func TestModelA(t *testing.T) {
 	buf, _ := json.MarshalIndent(a, "", "  ")
 	ioutil.WriteFile("4net.json", buf, 0644)
 
-	VTag(a)
+	err := NetSvg("4net", a)
+	if err != nil {
+		t.Fatal(err)
+	}
 
-	buf, _ = json.MarshalIndent(a, "", "  ")
-	ioutil.WriteFile("4net_vt.json", buf, 0644)
+	/*
+		buf, _ = json.MarshalIndent(a, "", "  ")
+		ioutil.WriteFile("4net_vt.json", buf, 0644)
+	*/
 
 }
 
@@ -72,8 +77,13 @@ func TestModelAB(t *testing.T) {
 
 	abc := NewNet()
 	abc.Nets = append(abc.Nets, a)
+	a.Parent = abc
+
 	abc.Nets = append(abc.Nets, b)
+	b.Parent = abc
+
 	abc.Nets = append(abc.Nets, c)
+	c.Parent = abc
 
 	t_ab := a.GetNodeByName("leaf").Endpoint().Set(Props{"bandwidth": "10G"})
 	t_ba := b.GetNodeByName("leaf").Endpoint().Set(Props{"bandwidth": "10G"})
@@ -103,12 +113,19 @@ func TestModelAB(t *testing.T) {
 	}
 	ioutil.WriteFile("44net.json", buf, 0644)
 
-	VTag(abc)
-
-	buf, err = json.MarshalIndent(abc, "", "  ")
+	err = NetSvg("44net", abc)
 	if err != nil {
 		t.Fatal(err)
 	}
-	ioutil.WriteFile("44net_vt.json", buf, 0644)
+
+	/*
+		VTag(abc)
+
+		buf, err = json.MarshalIndent(abc, "", "  ")
+		if err != nil {
+			t.Fatal(err)
+		}
+		ioutil.WriteFile("44net_vt.json", buf, 0644)
+	*/
 
 }

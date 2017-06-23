@@ -65,13 +65,20 @@ func main() {
 	}
 	ioutil.WriteFile("dnet.json", buf, 0644)
 
-	nmir.VTag(net)
-
-	buf, err = json.MarshalIndent(net, "", "  ")
+	err = nmir.NetSvg("dnet", net)
 	if err != nil {
 		log.Fatal(err)
 	}
-	ioutil.WriteFile("dnet_vt.json", buf, 0644)
+
+	/*
+		nmir.VTag(net)
+
+		buf, err = json.MarshalIndent(net, "", "  ")
+		if err != nil {
+			log.Fatal(err)
+		}
+		ioutil.WriteFile("dnet_vt.json", buf, 0644)
+	*/
 
 }
 
@@ -79,12 +86,24 @@ func buildNet(wires []Wire) *nmir.Net {
 
 	net := nmir.NewNet()
 
+	m := make(map[string]*nmir.Node)
 	for _, w := range wires {
-		a := net.Node().Set(nmir.Props{"name": w.a}).Endpoint()
-		b := net.Node().Set(nmir.Props{"name": w.b}).Endpoint()
+		_, ok := m[w.a]
+		if !ok {
+			m[w.a] = net.Node().Set(nmir.Props{"name": w.a})
+		}
+		_, ok = m[w.b]
+		if !ok {
+			m[w.b] = net.Node().Set(nmir.Props{"name": w.b})
+		}
+	}
+
+	for _, w := range wires {
+		//a := net.Node().Set(nmir.Props{"name": w.a}).Endpoint()
+		//b := net.Node().Set(nmir.Props{"name": w.b}).Endpoint()
 		net.Link(
-			[]*nmir.Endpoint{a},
-			[]*nmir.Endpoint{b},
+			[]*nmir.Endpoint{m[w.a].Endpoint()},
+			[]*nmir.Endpoint{m[w.b].Endpoint()},
 		)
 	}
 
