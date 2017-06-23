@@ -141,6 +141,18 @@ func (n *Node) Valence() int {
 	return v
 }
 
+func (n *Node) Neighbors() []*Node {
+
+	var result []*Node
+	for _, e := range n.Endpoints {
+		for _, n := range e.Neighbors {
+			result = append(result, n.Endpoint.Parent)
+		}
+	}
+	return result
+
+}
+
 // Link methods ---------------------------------------------------------------
 
 func (l *Link) IsLocal() bool {

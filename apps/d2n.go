@@ -107,6 +107,12 @@ func buildNet(wires []Wire) *nmir.Net {
 		)
 	}
 
+	for _, n := range net.Nodes {
+
+		log.Printf("%s %d", n.Props["name"], n.Valence())
+
+	}
+
 	return net
 
 }
