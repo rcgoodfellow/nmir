@@ -1,35 +1,33 @@
 package nmir
 
 import (
+	//	"fmt"
 	"github.com/ajstarks/svgo"
 	"log"
 	"math"
 	"os"
-	//"sort"
 )
 
-var lps LayoutParameters
-
-func init() {
-
-	lps.K = 1
-	lps.R = 1
-	lps.Step = 1e-3
-
-}
+const (
+	AK    = 1
+	RK    = 40
+	FK    = 1
+	Step  = 1e-2
+	Iters = 100
+)
 
 func VTag(net *Net) {
 
 	initialSpread(net, &Vec2{0, 0})
-	for i := 0; i < 100; i++ {
+	for i := 0; i < Iters; i++ {
 		layout(net)
-		log.Println(">>>---------->")
+		log.Printf(">>>- %d ------->", i)
 	}
 
 }
 
 type Bounds struct {
-	Xmin, Xmax, Ymin, Ymax float64
+	Width, Height float64
 }
 
 func bounds(net *Net, b *Bounds, cx, cy float64) {
@@ -45,20 +43,19 @@ func bounds(net *Net, b *Bounds, cx, cy float64) {
 	for _, n := range net.Nodes {
 
 		p := n.Props["position"].(*Vec2)
-		if p.X+cx > b.Xmax {
-			b.Xmax = p.X + cx
+		if math.Abs(p.X+cx) > b.Width {
+			b.Width = math.Abs(p.X + cx)
 		}
-		if p.X+cx < b.Xmin {
-			b.Xmin = p.X + cx
-		}
-		if p.Y+cy > b.Ymax {
-			b.Ymax = p.Y + cy
-		}
-		if p.Y+cy < b.Ymin {
-			b.Ymin = p.Y + cy
+		if math.Abs(p.Y+cy) > b.Height {
+			b.Height = math.Abs(p.Y + cy)
 		}
 
 	}
+	b.Width *= 2
+	b.Height *= 2
+
+	b.Width += 50
+	b.Height += 50
 
 }
 
@@ -74,20 +71,15 @@ func NetSvg(name string, net *Net) error {
 	var b Bounds
 	bounds(net, &b, 0.0, 0.0)
 
-	width := int(b.Xmax-b.Xmin) + 100
-	height := int(b.Ymax-b.Ymin) + 100
-	cx, cy := width/2, height/2
-	p := net.Props["position"].(*Vec2)
-	p.X = float64(cx)
-	p.Y = float64(cy)
+	cx, cy := int(b.Width/2.0), int(b.Height/2.0)
 
 	canvas := svg.New(out)
-	canvas.Start(width, height)
+	canvas.Start(int(b.Width), int(b.Height))
 
 	defer canvas.End()
 
-	doNetSvgLink(net, 0, 0, canvas)
-	doNetSvgNode(net, 0, 0, canvas)
+	doNetSvgLink(net, cx, cy, canvas)
+	doNetSvgNode(net, cx, cy, canvas)
 
 	return nil
 
@@ -132,12 +124,23 @@ func doNetSvgNode(net *Net, cx, cy int, canvas *svg.SVG) {
 
 	for _, n := range net.Nodes {
 
+		color := "fill:#334f7c"
+		if n.Valence() > 10 {
+			color = "fill:#11a052"
+		}
+
 		pos = n.Props["position"].(*Vec2)
 		canvas.Circle(
 			cx+int(pos.X),
 			cy+int(pos.Y),
 			10,
-			"fill:#334f7c",
+			color,
+		)
+		canvas.Text(
+			cx+int(pos.X),
+			cy+int(pos.Y),
+			//fmt.Sprintf("%d", n.Valence()),
+			n.Props["name"].(string),
 		)
 
 	}
@@ -188,7 +191,7 @@ func doNetSvgLink(net *Net, cx, cy int, canvas *svg.SVG) {
 
 func initialSpread(net *Net, centroid *Vec2) {
 
-	radius := 10.0
+	radius := 100.0
 	phase := math.Pi / -8.0
 	net.Props["position"] = centroid
 	increment := 2 * math.Pi / float64(len(net.Nets))
@@ -212,6 +215,7 @@ func initialSpread(net *Net, centroid *Vec2) {
 		x := radius * math.Cos(angle)
 		y := radius * math.Sin(angle)
 		n.Props["position"] = &Vec2{x, y}
+		n.Props["dp"] = &Vec2{0, 0}
 		log.Printf("{%s} tagged", n.Props["name"])
 
 		for _, e := range n.Endpoints {
@@ -228,42 +232,117 @@ func layout(net *Net) {
 
 	//contract(net)
 	//expand(net)
-	force(net)
-	labelNodes(net)
+	//force(net)
+	force3(net)
+	step(net)
+	constrain(net)
+	step(net)
+	//labelNodes(net)
 
 }
 
-const (
-	AK   = 0.25
-	RK   = 0.75
-	FK   = 0.0023
-	Step = 1e-2
-)
+func step(net *Net) {
+	for _, n := range net.Nodes {
+		p := n.Props["position"].(*Vec2)
+		dp := n.Props["dp"].(*Vec2)
+
+		p.X += dp.X
+		p.Y += dp.Y
+
+		dp.X = 0
+		dp.Y = 0
+	}
+}
 
 func force(net *Net) {
 
 	for _, a := range net.Nodes {
-
-		for _, b := range a.Neighbors() {
-
+		for _, b := range net.Nodes {
+			if a == b {
+				continue
+			}
 			fab(a, b)
-
 		}
+	}
 
+}
+
+func force2(net *Net) {
+	for _, l := range net.Links {
+		eab(l)
+	}
+}
+
+func force3(net *Net) {
+
+	for _, a := range net.Nodes {
+		for _, b := range a.Neighbors() {
+			fab2(a, b)
+			/*
+				for _, c := range a.Neighbors() {
+					if b == c {
+						continue
+					}
+					fab(b, c)
+				}
+			*/
+		}
+	}
+
+}
+
+func constrain(net *Net) {
+
+	for _, a := range net.Nodes {
+		for _, b := range a.Neighbors() {
+			gab2(a, b)
+		}
+	}
+
+}
+
+func eab(l *Link) {
+
+	for _, ea := range l.Endpoints[0] {
+		for _, eb := range l.Endpoints[1] {
+			a := ea.Parent
+			b := eb.Parent
+
+			av := float64(a.Valence())
+			bv := float64(b.Valence())
+
+			d := node_distance(a, b)
+			t := node_angle(a, b)
+
+			avbv := (av + bv) / 2.0
+			f := (RK * avbv / d * d) * Step
+
+			ap := a.Props["dp"].(*Vec2)
+			bp := b.Props["dp"].(*Vec2)
+
+			dx := f * math.Cos(t)
+			dy := f * math.Sin(t)
+
+			ap.X += dx
+			ap.Y += dy
+
+			bp.X -= dx
+			bp.Y -= dy
+		}
 	}
 
 }
 
 func fab(a, b *Node) {
-	av := float64(a.Valence())
-	bv := float64(b.Valence())
-	p := a.Props["position"].(*Vec2)
+	//av := float64(a.Valence())
+	p := b.Props["dp"].(*Vec2)
 
 	d := node_distance(a, b)
-	friction := av * FK
-	attractive := -(bv * AK) * Step
-	repulsive := (bv * av * RK / d * d) * Step
-	f := (repulsive + attractive) / friction
+	if d == 0 {
+		return
+	}
+	repulsive := (RK / d * d) * Step
+	f := repulsive
 
 	theta := node_angle(a, b)
 	p.X += f * math.Cos(theta)
@@ -271,188 +350,54 @@ func fab(a, b *Node) {
 
 }
 
-func contract(net *Net) {
+func fab2(a, b *Node) {
+	av := float64(a.Valence())
+	p := b.Props["dp"].(*Vec2)
 
-	log.Println("contract start")
-
-	for _, n := range net.Nets {
-		contract(n)
-	}
-
-	for _, l := range net.Links {
-
-		for _, p_ := range l.Endpoints[0] {
-			for _, q_ := range l.Endpoints[1] {
-				var p, q *Vec2
-
-				//k := 1.0
-				pw := 1.0
-				qw := 1.0
-
-				if l.IsLocal() {
-					pw = float64(p_.Parent.Valence())
-					qw = float64(p_.Parent.Valence())
-					p = p_.Parent.Props["position"].(*Vec2)
-					q = q_.Parent.Props["position"].(*Vec2)
-					//d := distance(p, q)
-					//k = float64((pw + qw)) * (1.0 / d * d)
-				} else {
-					p = p_.Parent.Parent.Props["position"].(*Vec2)
-					q = q_.Parent.Parent.Props["position"].(*Vec2)
-				}
-
-				theta := angle(p, q)
-				p.X += ((qw * math.Cos(theta)) / pw * 0.1) * lps.Step
-				p.Y += ((qw * math.Sin(theta)) / pw * 0.1) * lps.Step
-
-				//theta -= math.Pi
-				theta = angle(q, p)
-				q.X += ((pw * math.Cos(theta)) / qw * 0.1) * lps.Step
-				q.Y += ((pw * math.Sin(theta)) / qw * 0.1) * lps.Step
-			}
-		}
-
-	}
-
-	log.Println("contract finish")
-
-}
-
-func expand(net *Net) {
-
-	log.Println("expand start")
-
-	for _, a := range net.Nets {
-		for _, b := range net.Nets {
-			a_pos := a.Props["position"].(*Vec2)
-			b_pos := b.Props["position"].(*Vec2)
-
-			do_expand(a_pos, b_pos, 1, 1, 1, 1, lps.R*10)
-		}
-	}
-
-	for _, n := range net.Nets {
-		expand(n)
-	}
-
-	for _, x := range net.Nodes {
-
-		o := x.Props["position"].(*Vec2)
-		ow := float64(x.Valence())
-
-		for _, e := range x.Endpoints {
-			for _, n := range e.Neighbors {
-
-				p := n.Endpoint.Parent.Props["position"].(*Vec2)
-				pw := float64(n.Endpoint.Parent.Valence())
-
-				d := distance(o, p)
-
-				of := ow / d * d
-				pf := pw / d * d
-
-				//k := float64(ow+pw) * (1.0 / d * d)
-				do_expand(o, p, of, pf, ow, pw, lps.R)
-
-				for _, m := range e.Neighbors {
-					if n == m {
-						continue
-					}
-
-					q := m.Endpoint.Parent.Props["position"].(*Vec2)
-					qw := float64(m.Endpoint.Parent.Valence())
-
-					d := distance(q, p)
-					qf := qw / d * d
-
-					//k := float64(qw+pw) * (1.0 / d * d)
-					do_expand(p, q, pf, qf, pw, qw, lps.R)
-				}
-
-			}
-
-		}
-	}
-
-	log.Println("expand finish")
-
-}
-
-func do_expand(a, b *Vec2, af, bf, aw, bw, repel float64) {
-	if a == b {
+	d := node_distance(a, b)
+	if d == 0 {
 		return
 	}
-	theta := angle(b, a)
-	//dist := distance(a, b)
-	//r := repel // / dist
+	repulsive := (RK * av / d * d) * Step
+	f := repulsive
 
-	a.X += (bf * aw * 0.1 * math.Cos(theta)) * lps.Step
-	a.Y += (bf * aw * 0.1 * math.Sin(theta)) * lps.Step
+	theta := node_angle(a, b)
+	p.X += f * math.Cos(theta)
+	p.Y += f * math.Sin(theta)
 
-	//theta -= math.Pi
-	theta = angle(a, b)
-
-	b.X += (af * bw * 0.1 * math.Cos(theta)) * lps.Step
-	b.Y += (af * bw * 0.1 * math.Sin(theta)) * lps.Step
 }
 
-func labelNodes(net *Net) {
+func gab(a, b *Node) {
+	av := float64(a.Valence())
+	p := b.Props["dp"].(*Vec2)
 
-	for _, n := range net.Nets {
-		labelNodes(n)
+	d := node_distance(a, b)
+	if d < av {
+		return
 	}
+	attractive := (AK * d) * Step
+	f := attractive
 
-	/*
-		//calculate the angles of the outgoing links for each node and place a label
-		//in the most vacant (wrt. lines) spot outside the node
+	theta := node_angle(b, a)
+	p.X += f * math.Cos(theta)
+	p.Y += f * math.Sin(theta)
 
-		//calculating the angles
-		for _, n := range net.Nodes {
-			var angles sort.Float64Slice
-			for _, e := range n.Endpoints {
-				for _, nbr := range e.Neighbors {
+}
 
-					angles = append(angles, angle(n, nbr.Endpoint.Parent))
+func gab2(a, b *Node) {
+	av := float64(a.Valence())
+	p := b.Props["dp"].(*Vec2)
 
-				}
-			}
-
-			//determine the most open position
-			pos := 0
-			label_angle := 0.0
-			if len(angles) > 0 {
-				angles.Sort()
-
-				sep := 0.0
-				for i, _ := range angles[:len(angles)-1] {
-
-					delta := angles[i] - angles[i+1]
-					log.Printf("[%s] %d-%d %f %f", n.Props["name"], i, i+1, angles[i], delta)
-					if math.Abs(delta) > sep {
-						sep = math.Abs(delta)
-						pos = i
-						label_angle = angles[pos] + delta/2.0
-					}
-				}
-
-				delta := angles[len(angles)-1] - (2*math.Pi + angles[0])
-				log.Printf("[%s] %d-%d %f %f",
-					n.Props["name"], len(angles), 0, angles[len(angles)-1], delta)
-				if math.Abs(delta) > sep {
-					sep = math.Abs(delta)
-					pos = len(angles) - 1
-					label_angle = angles[pos] + delta/2.0
-				}
-
-			}
-			//log.Printf("{%s} %f", n.Props["name"], label_angle)
-			n.Props["label_angle"] = label_angle
-		}
-	*/
-
-	for _, n := range net.Nodes {
-		n.Props["label_angle"] = math.Pi / 4.0
+	d := node_distance(a, b)
+	if d < av {
+		return
 	}
+	attractive := (AK * av * d) * Step
+	f := attractive
+
+	theta := node_angle(b, a)
+	p.X += f * math.Cos(theta)
+	p.Y += f * math.Sin(theta)
 
 }
 
@@ -504,8 +449,4 @@ func (v *Vec2) Add(x Vec2) Vec2 {
 type Vec2 struct {
 	X float64 `json:"x"`
 	Y float64 `json:"y"`
-}
-
-type LayoutParameters struct {
-	K, R, Step float64
 }
