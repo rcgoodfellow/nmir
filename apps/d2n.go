@@ -65,10 +65,14 @@ func main() {
 	}
 	ioutil.WriteFile("dnet.json", buf, 0644)
 
-	err = nmir.NetSvg("dnet", net)
-	if err != nil {
-		log.Fatal(err)
-	}
+	nmir.PNetSvg("qdnet", net)
+
+	/*
+		err = nmir.NetSvg("dnet", net)
+		if err != nil {
+			log.Fatal(err)
+		}
+	*/
 
 	/*
 		nmir.VTag(net)

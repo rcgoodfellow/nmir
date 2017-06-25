@@ -10,18 +10,23 @@ import (
 
 const (
 	AK    = 1
-	RK    = 40
-	FK    = 1
-	Step  = 1e-2
-	Iters = 100
+	RK    = 1
+	Iters = 1000
 )
+
+var Step = 1.0
+var Max = 0.0
+var CForce = 0
+var RForce = 0
 
 func VTag(net *Net) {
 
 	initialSpread(net, &Vec2{0, 0})
 	for i := 0; i < Iters; i++ {
-		layout(net)
-		log.Printf(">>>- %d ------->", i)
+		if !layout(net) {
+			break
+		}
+		log.Printf(">>>- %d ------------->", i)
 	}
 
 }
@@ -228,17 +233,50 @@ func initialSpread(net *Net, centroid *Vec2) {
 
 }
 
-func layout(net *Net) {
+func layout(net *Net) bool {
 
 	//contract(net)
 	//expand(net)
 	//force(net)
-	force3(net)
-	step(net)
+	force(net)
+	//adapt(net)
+	//step(net)
 	constrain(net)
+	/*
+		if adapt(net) {
+			reset(net)
+			return true
+		}
+		if Max < 1e-4 {
+			return false
+		}
+	*/
 	step(net)
+	return true
 	//labelNodes(net)
 
+}
+
+func adapt(net *Net) bool {
+	result := false
+	Max = 0
+	for _, n := range net.Nodes {
+		dp := n.Props["dp"].(*Vec2)
+		x := math.Sqrt(dp.X*dp.X + dp.Y*dp.Y)
+		if x > Max {
+			Max = x
+		}
+	}
+	//if Max < 1 {
+	//Step *= 10
+	//}
+	if Max > 1000 {
+		Step *= 0.1
+		result = true
+	}
+
+	log.Printf("A[%f](%f)", Step, Max)
+	return result
 }
 
 func step(net *Net) {
@@ -249,6 +287,14 @@ func step(net *Net) {
 		p.X += dp.X
 		p.Y += dp.Y
 
+		dp.X = 0
+		dp.Y = 0
+	}
+}
+
+func reset(net *Net) {
+	for _, n := range net.Nodes {
+		dp := n.Props["dp"].(*Vec2)
 		dp.X = 0
 		dp.Y = 0
 	}
@@ -267,81 +313,24 @@ func force(net *Net) {
 
 }
 
-func force2(net *Net) {
-	for _, l := range net.Links {
-		eab(l)
-	}
-}
-
-func force3(net *Net) {
-
-	for _, a := range net.Nodes {
-		for _, b := range a.Neighbors() {
-			fab2(a, b)
-			/*
-				for _, c := range a.Neighbors() {
-					if b == c {
-						continue
-					}
-					fab(b, c)
-				}
-			*/
-		}
-	}
-
-}
-
 func constrain(net *Net) {
 
 	for _, a := range net.Nodes {
 		for _, b := range a.Neighbors() {
-			gab2(a, b)
-		}
-	}
-
-}
-
-func eab(l *Link) {
-
-	for _, ea := range l.Endpoints[0] {
-		for _, eb := range l.Endpoints[1] {
-			a := ea.Parent
-			b := eb.Parent
-
-			av := float64(a.Valence())
-			bv := float64(b.Valence())
-
-			d := node_distance(a, b)
-			t := node_angle(a, b)
-
-			avbv := (av + bv) / 2.0
-			f := (RK * avbv / d * d) * Step
-
-			ap := a.Props["dp"].(*Vec2)
-			bp := b.Props["dp"].(*Vec2)
-
-			dx := f * math.Cos(t)
-			dy := f * math.Sin(t)
-
-			ap.X += dx
-			ap.Y += dy
-
-			bp.X -= dx
-			bp.Y -= dy
+			gab(a, b)
 		}
 	}
 
 }
 
 func fab(a, b *Node) {
-	//av := float64(a.Valence())
 	p := b.Props["dp"].(*Vec2)
 
 	d := node_distance(a, b)
 	if d == 0 {
 		return
 	}
-	repulsive := (RK / d * d) * Step
+	repulsive := (1 / (d)) * Step
 	f := repulsive
 
 	theta := node_angle(a, b)
@@ -350,18 +339,17 @@ func fab(a, b *Node) {
 
 }
 
-func fab2(a, b *Node) {
-	av := float64(a.Valence())
+func qfab(a *Qnode, b *Node) {
 	p := b.Props["dp"].(*Vec2)
 
-	d := node_distance(a, b)
+	d := node_distance(a.Data.(*Node), b)
 	if d == 0 {
 		return
 	}
-	repulsive := (RK * av / d * d) * Step
+	repulsive := (1 / (d)) * Step
 	f := repulsive
 
-	theta := node_angle(a, b)
+	theta := node_angle(a.Data.(*Node), b)
 	p.X += f * math.Cos(theta)
 	p.Y += f * math.Sin(theta)
 
@@ -375,24 +363,7 @@ func gab(a, b *Node) {
 	if d < av {
 		return
 	}
-	attractive := (AK * d) * Step
-	f := attractive
-
-	theta := node_angle(b, a)
-	p.X += f * math.Cos(theta)
-	p.Y += f * math.Sin(theta)
-
-}
-
-func gab2(a, b *Node) {
-	av := float64(a.Valence())
-	p := b.Props["dp"].(*Vec2)
-
-	d := node_distance(a, b)
-	if d < av {
-		return
-	}
-	attractive := (AK * av * d) * Step
+	attractive := 1 * Step
 	f := attractive
 
 	theta := node_angle(b, a)

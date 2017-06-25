@@ -22,6 +22,7 @@ type Node struct {
 	Endpoints []*Endpoint `json:"endpoints"`
 	Props     Props       `json:"props"`
 	Parent    *Net        `json:"-"`
+	Visited   bool        `json:"-"`
 }
 
 type Link struct {
