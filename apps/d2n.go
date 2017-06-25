@@ -89,6 +89,7 @@ func main() {
 func buildNet(wires []Wire) *nmir.Net {
 
 	net := nmir.NewNet()
+	net.Props["position"] = &nmir.Point{0, 0}
 
 	m := make(map[string]*nmir.Node)
 	for _, w := range wires {
@@ -111,11 +112,13 @@ func buildNet(wires []Wire) *nmir.Net {
 		)
 	}
 
-	for _, n := range net.Nodes {
+	/*
+		for _, n := range net.Nodes {
 
-		log.Printf("%s %d", n.Props["name"], n.Valence())
+			log.Printf("%s %d", n.Props["name"], n.Valence())
 
-	}
+		}
+	*/
 
 	return net
 
@@ -143,7 +146,7 @@ func collectWires() []Wire {
 		if err != nil {
 			log.Fatal(err)
 		}
-		log.Printf("%s %s", a, b)
+		//log.Printf("%s %s", a, b)
 		wires = append(wires, Wire{a, b})
 	}
 

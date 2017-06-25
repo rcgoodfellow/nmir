@@ -6,6 +6,7 @@ type Point struct {
 
 type Positional interface {
 	Position() *Point
+	Velocity() *Point
 	Weight() float64
 }
 
@@ -79,8 +80,25 @@ func (x Ynodes) Less(i, j int) bool {
 func (n *Node) Position() *Point {
 	return n.Props["position"].(*Point)
 }
+func (n *Node) Velocity() *Point {
+	return n.Props["dp"].(*Point)
+}
+
+func (n *Net) Position() *Point {
+	return n.Props["position"].(*Point)
+}
+func (n *Net) Velocity() *Point {
+	return n.Props["dp"].(*Point)
+}
+
+func (n *Endpoint) Position() *Point {
+	return n.Props["position"].(*Point)
+}
+func (n *Endpoint) Velocity() *Point {
+	return n.Props["dp"].(*Point)
+}
 
 func (n *Node) Weight() float64 {
-	//return float64(n.Valence())
-	return 1
+	return 5 * float64(n.Valence())
+	//return 1.0
 }

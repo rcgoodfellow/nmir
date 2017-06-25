@@ -90,36 +90,40 @@ func NetSvg(name string, net *Net) error {
 
 }
 
-func (n *Net) Global() Vec2 {
+func (n *Net) Global() Point {
 
-	p := n.Props["position"].(*Vec2)
+	//p := n.Props["position"].(*Vec2)
+	p := *n.Position()
 
 	if n.Parent == nil {
-		return *p
+		return p
 	}
 
-	return p.Add(n.Parent.Global())
+	return Add(p, n.Parent.Global())
 
 }
 
-func (n *Node) Global() Vec2 {
+func (n *Node) Global() Point {
 
-	p := n.Props["position"].(*Vec2)
+	//p := n.Props["position"].(*Vec2)
+	p := *n.Position()
 
-	return p.Add(n.Parent.Global())
+	return Add(p, n.Parent.Global())
 
 }
 
-func (n *Endpoint) Global() Vec2 {
+func (n *Endpoint) Global() Point {
 
-	p := n.Props["position"].(*Vec2)
+	//p := n.Props["position"].(*Vec2)
+	p := *n.Position()
 
-	return p.Add(n.Parent.Global())
+	return Add(p, n.Parent.Global())
 
 }
 
 func doNetSvgNode(net *Net, cx, cy int, canvas *svg.SVG) {
-	pos := net.Props["position"].(*Vec2)
+	//pos := net.Props["position"].(*Vec2)
+	pos := net.Position()
 	cx += int(pos.X)
 	cy += int(pos.Y)
 
@@ -133,8 +137,12 @@ func doNetSvgNode(net *Net, cx, cy int, canvas *svg.SVG) {
 		if n.Valence() > 10 {
 			color = "fill:#11a052"
 		}
+		if n.Props["name"] == "bpc223" {
+			color = "fill:#ff0000"
+		}
 
-		pos = n.Props["position"].(*Vec2)
+		//pos = n.Props["position"].(*Vec2)
+		pos = n.Position()
 		canvas.Circle(
 			cx+int(pos.X),
 			cy+int(pos.Y),
@@ -154,7 +162,8 @@ func doNetSvgNode(net *Net, cx, cy int, canvas *svg.SVG) {
 
 func doNetSvgLink(net *Net, cx, cy int, canvas *svg.SVG) {
 
-	pos := net.Props["position"].(*Vec2)
+	//pos := net.Props["position"].(*Vec2)
+	pos := net.Position()
 	cx += int(pos.X)
 	cy += int(pos.Y)
 
@@ -168,9 +177,11 @@ func doNetSvgLink(net *Net, cx, cy int, canvas *svg.SVG) {
 			for _, q_ := range l.Endpoints[1] {
 
 				if l.IsLocal() {
-					var p, q *Vec2
-					p = p_.Parent.Props["position"].(*Vec2)
-					q = q_.Parent.Props["position"].(*Vec2)
+					var p, q *Point
+					//p = p_.Parent.Props["position"].(*Vec2)
+					p = p_.Parent.Position()
+					//q = q_.Parent.Props["position"].(*Vec2)
+					q = q_.Parent.Position()
 
 					canvas.Line(
 						cx+int(p.X), cy+int(p.Y),
@@ -281,8 +292,8 @@ func adapt(net *Net) bool {
 
 func step(net *Net) {
 	for _, n := range net.Nodes {
-		p := n.Props["position"].(*Vec2)
-		dp := n.Props["dp"].(*Vec2)
+		p := n.Props["position"].(*Point)
+		dp := n.Props["dp"].(*Point)
 
 		p.X += dp.X
 		p.Y += dp.Y
@@ -315,9 +326,20 @@ func force(net *Net) {
 
 func constrain(net *Net) {
 
-	for _, a := range net.Nodes {
-		for _, b := range a.Neighbors() {
-			gab(a, b)
+	/*
+		for _, a := range net.Nodes {
+			for _, b := range a.Neighbors() {
+				gab(a, b)
+			}
+		}
+	*/
+	for _, l := range net.Links {
+		for _, ea := range l.Endpoints[0] {
+			for _, eb := range l.Endpoints[1] {
+
+				gab(ea.Parent, eb.Parent)
+
+			}
 		}
 	}
 
@@ -326,14 +348,14 @@ func constrain(net *Net) {
 func fab(a, b *Node) {
 	p := b.Props["dp"].(*Vec2)
 
-	d := node_distance(a, b)
+	d := distance(a, b)
 	if d == 0 {
 		return
 	}
 	repulsive := (1 / (d)) * Step
 	f := repulsive
 
-	theta := node_angle(a, b)
+	theta := angle(a, b)
 	p.X += f * math.Cos(theta)
 	p.Y += f * math.Sin(theta)
 
@@ -342,14 +364,36 @@ func fab(a, b *Node) {
 func qfab(a *Qnode, b *Node) {
 	p := b.Props["dp"].(*Vec2)
 
-	d := node_distance(a.Data.(*Node), b)
+	d := distance(a.Data.(*Node), b)
 	if d == 0 {
 		return
 	}
 	repulsive := (1 / (d)) * Step
 	f := repulsive
 
-	theta := node_angle(a.Data.(*Node), b)
+	theta := angle(a.Data.(*Node), b)
+	p.X += f * math.Cos(theta)
+	p.Y += f * math.Sin(theta)
+
+}
+
+func pfab(a, b Positional) {
+	//p := b.Props["dp"].(*Vec2)
+	p := b.Velocity()
+
+	d := distance(a, b)
+	if d < 1e-4 {
+		//p.X += 50
+		//p.Y += 50
+		return
+	}
+	//log.Printf("weight=%f", a.Weight())
+	//m := a.Weight() / b.Weight()
+	m := a.Weight()
+	repulsive := (m / (d)) * Step
+	f := repulsive
+
+	theta := angle(a, b)
 	p.X += f * math.Cos(theta)
 	p.Y += f * math.Sin(theta)
 
@@ -357,21 +401,31 @@ func qfab(a *Qnode, b *Node) {
 
 func gab(a, b *Node) {
 	av := float64(a.Valence())
-	p := b.Props["dp"].(*Vec2)
+	bv := float64(b.Valence())
+	da := a.Props["dp"].(*Point)
+	db := b.Props["dp"].(*Point)
 
-	d := node_distance(a, b)
-	if d < av {
+	d := distance(a, b)
+	if d < 10.0 {
 		return
 	}
-	attractive := 1 * Step
-	f := attractive
 
-	theta := node_angle(b, a)
-	p.X += f * math.Cos(theta)
-	p.Y += f * math.Sin(theta)
+	//attractive := a.Weight() * Step
+	//attractive := ((a.Weight() + b.Weight()) / 2) * Step
+	//attractive := 1.0 + d*0.001
+	//f := attractive
+
+	theta := angle(b, a)
+	db.X += (d / 10.0 / bv) * math.Cos(theta)
+	db.Y += (d / 10.0 / bv) * math.Sin(theta)
+
+	theta = angle(a, b)
+	da.X += (d / 10.0 / av) * math.Cos(theta)
+	da.Y += (d / 10.0 / av) * math.Sin(theta)
 
 }
 
+/*
 func node_angle(a, b *Node) float64 {
 	return angle(
 		a.Props["position"].(*Vec2),
@@ -385,11 +439,12 @@ func node_distance(a, b *Node) float64 {
 		b.Props["position"].(*Vec2),
 	)
 }
+*/
 
-func angle(a, b *Vec2) float64 {
+func angle(a, b Positional) float64 {
 
-	dx := b.X - a.X
-	dy := b.Y - a.Y
+	dx := b.Position().X - a.Position().X
+	dy := b.Position().Y - a.Position().Y
 
 	theta := math.Atan2(dy, dx)
 	if theta < 0 {
@@ -400,10 +455,10 @@ func angle(a, b *Vec2) float64 {
 
 }
 
-func distance(a, b *Vec2) float64 {
+func distance(a, b Positional) float64 {
 
-	dx := a.X - b.X
-	dy := a.Y - b.Y
+	dx := a.Position().X - b.Position().X
+	dy := a.Position().Y - b.Position().Y
 
 	return math.Sqrt(dx*dx + dy*dy)
 
@@ -412,6 +467,12 @@ func distance(a, b *Vec2) float64 {
 func (v *Vec2) Add(x Vec2) Vec2 {
 
 	return Vec2{v.X + x.X, v.Y + x.Y}
+
+}
+
+func Add(v, x Point) Point {
+
+	return Point{v.X + x.X, v.Y + x.Y}
 
 }
 

@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	InitRadius = 100.0
+	InitRadius = 1000.0
 	Chunk      = 10
 	AggD       = 100
 )
@@ -138,7 +138,7 @@ func QSpread(net *Net, qtr *Qnode) {
 
 func Qforce(node *Node, qtr *Qnode) {
 
-	d := node_distance(node, qtr.Data.(*Node))
+	d := distance(node, qtr.Data.(*Node))
 	if d >= AggD {
 		qfab(qtr, node)
 	}

@@ -1,15 +1,17 @@
 package nmir
 
 import (
-	//"github.com/ajstarks/svgo"
+	"github.com/ajstarks/svgo"
 	"log"
 	"math"
-	//"sort"
-	//"os"
+	"os"
 )
 
-func PTree(net *Net) *Pinode {
+const (
+	BHC = 0.5
+)
 
+func pinit(net *Net) {
 	n := float64(len(net.Nodes))
 
 	for i, x := range net.Nodes {
@@ -19,10 +21,20 @@ func PTree(net *Net) *Pinode {
 			InitRadius * math.Cos(theta),
 			InitRadius * math.Sin(theta),
 		}
+		x.Props["dp"] = &Point{0, 0}
 	}
 
+	for i := 0; i < 0; i++ {
+		constrain(net)
+		step(net)
+	}
+
+}
+
+func PTree(net *Net) *Pinode {
+
 	ptr := &Pinode{
-		Width:    100000.0,
+		Width:    10000.0,
 		Centroid: Point{0, 0},
 	}
 
@@ -35,15 +47,23 @@ func PTree(net *Net) *Pinode {
 
 }
 
-func playout(net *Net) {
+func playout(net *Net) *Pinode {
 
-	log.Printf("building ptree")
 	ptr := PTree(net)
-	//log.Printf("%#v", ptr)
-	log.Printf("qtree: size=%d height=%d",
-		PSize(ptr),
-		PHeight(ptr),
-	)
+
+	/*
+		log.Printf("qtree: size=%d height=%d",
+			PSize(ptr),
+			PHeight(ptr),
+		)
+	*/
+
+	Pspread(net, ptr)
+	step(net)
+	constrain(net)
+	step(net)
+
+	return ptr
 
 }
 
@@ -88,33 +108,126 @@ func PSize(ptr *Pinode) int {
 
 }
 
-func PNetSvg(name string, net *Net) error {
-	log.Printf("net: size=%d", len(net.Nodes))
+func Pspread(net *Net, ptr *Pinode) {
 
-	for i := 0; i < 20; i++ {
+	for _, n := range net.Nodes {
+		Pforce(n, ptr)
+	}
 
-		playout(net)
+}
+
+func Pforce(node *Node, ptr *Pinode) {
+
+	for _, p := range ptr.Quad {
+
+		if p == nil {
+			continue
+		}
+
+		lnode, ok := p.(*Plnode)
+		if ok {
+			pfab(lnode.Data, node)
+			if node.Props["name"] == "bpc223" {
+				/*
+					log.Printf("push %s[%d] @%f %f,%f",
+						lnode.Data.(*Node).Props["name"],
+						lnode.Data.(*Node).Valence(),
+						distance(lnode.Data, node),
+						node.Props["dp"].(*Point).X,
+						node.Props["dp"].(*Point).Y,
+					)
+				*/
+			}
+		}
+
+		inode, ok := p.(*Pinode)
+		if ok {
+			s := inode.Width
+			d := distance(node, inode)
+
+			if s/d < BHC { //far enough away to aggregate
+				pfab(inode, node)
+				//Pforce(node, inode)
+			} else { //need to recurse down futher
+				Pforce(node, inode)
+			}
+		}
 
 	}
 
-	/*
-		out, err := os.Create(name + ".svg")
-		if err != nil {
-			return err
-		}
-		defer out.Close()
+}
 
-		b := QBounds(qtr)
-		cx, cy := int(b.Width/2.0), int(b.Height/2.0)
+func PBounds(ptr *Pinode) Bounds {
+	ul := PUpperLeft(ptr)
+	lr := PLowerRight(ptr)
+	return Bounds{
+		ul.Y - lr.Y,
+		lr.X - ul.X,
+	}
+}
 
-		canvas := svg.New(out)
-		canvas.Start(int(b.Width), int(b.Height))
+func PUpperLeft(ptr *Pinode) *Point {
+	return PBound(ptr, 0)
+}
 
-		defer canvas.End()
+func PLowerRight(ptr *Pinode) *Point {
+	return PBound(ptr, 2)
+}
 
-		doNetSvgLink(net, cx, cy, canvas)
-		doNetSvgNode(net, cx, cy, canvas)
-	*/
+func PBound(ptr *Pinode, quad int) *Point {
+
+	x := ptr.Quad[quad]
+	if x == nil {
+		return &ptr.Centroid
+	}
+
+	lnode, ok := x.(*Plnode)
+	if ok {
+		return lnode.Data.Position()
+	}
+
+	inode, ok := x.(*Pinode)
+	if x != nil {
+		return PBound(inode, quad)
+	}
+
+	return &ptr.Centroid
+}
+
+func PNetSvg(name string, net *Net) error {
+	log.Printf("net: size=%d", len(net.Nodes))
+
+	//var ptr *Pinode
+	pinit(net)
+
+	for i := 0; i < 100; i++ {
+
+		log.Printf(">>==={%d}-------->", i)
+		/*ptr = */ playout(net)
+
+	}
+
+	out, err := os.Create(name + ".svg")
+	if err != nil {
+		return err
+	}
+	defer out.Close()
+
+	/*ptr = PTree(net)*/
+	//b := PBounds(ptr)
+	b := Bounds{
+		Height: 5000,
+		Width:  5000,
+	}
+	cx, cy := int(b.Width/2.0), int(b.Height/2.0)
+
+	canvas := svg.New(out)
+	canvas.Start(int(b.Width), int(b.Height))
+
+	defer canvas.End()
+
+	doNetSvgLink(net, cx, cy, canvas)
+	doNetSvgNode(net, cx, cy, canvas)
 
 	return nil
 
