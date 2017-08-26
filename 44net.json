@@ -1,74 +1,62 @@
 {
-  "id": "c7533b62-e2b0-41ca-94af-3d4e9ce051cc",
+  "id": "251dc123-61df-4c1f-848b-f80848dfffd5",
   "nodes": null,
   "links": [
     {
-      "id": "851b8343-2053-40be-8778-b98882315a51",
+      "id": "e8435136-e163-4417-b15b-b2de55dbf2d7",
       "endpoints": [
-        [
-          {
-            "id": "b7cc40cd-0c1f-4a2b-838e-804f4064f88c",
-            "props": {
-              "bandwidth": "10G"
-            }
+        {
+          "id": "7bff9548-4d6f-4441-abed-c0670e3f40c1",
+          "props": {
+            "bandwidth": "10G"
           }
-        ],
-        [
-          {
-            "id": "7bfd59f0-3d34-4b57-85e1-b9a93e1f1e7f",
-            "props": {
-              "bandwidth": "10G"
-            }
+        },
+        {
+          "id": "88c0aec2-8f66-4ba9-bb69-148eb498cecc",
+          "props": {
+            "bandwidth": "10G"
           }
-        ]
+        }
       ],
       "props": {
         "local": false
       }
     },
     {
-      "id": "73131fd6-946c-4d96-8ea1-6ebd03bccfd1",
+      "id": "90d80498-801b-40c9-a479-45e27b7156bf",
       "endpoints": [
-        [
-          {
-            "id": "da6743b3-e550-48c9-9d8d-bde449989b16",
-            "props": {
-              "bandwidth": "10G"
-            }
+        {
+          "id": "8f4a3049-88d1-40fe-b0a3-ce5ba7bc98dc",
+          "props": {
+            "bandwidth": "10G"
           }
-        ],
-        [
-          {
-            "id": "2a5cbf45-8c8e-4fac-a16f-c91931ea8a8e",
-            "props": {
-              "bandwidth": "10G"
-            }
+        },
+        {
+          "id": "a435d293-6654-4d8c-a4a0-a475b5ab9ac5",
+          "props": {
+            "bandwidth": "10G"
           }
-        ]
+        }
       ],
       "props": {
         "local": false
       }
     },
     {
-      "id": "8ec5b773-ad1e-4fff-a9f7-27589c1a4728",
+      "id": "25330319-c272-44d4-bc85-e381629844a9",
       "endpoints": [
-        [
-          {
-            "id": "16f8ca0b-b9e1-4fbe-8ed5-550f3dfe6e01",
-            "props": {
-              "bandwidth": "10G"
-            }
+        {
+          "id": "c8978c5b-1c73-43c6-b83a-cf1b749bdc4d",
+          "props": {
+            "bandwidth": "10G"
           }
-        ],
-        [
-          {
-            "id": "d9f4cd9f-a4a9-4a29-b643-47bfdb90de6f",
-            "props": {
-              "bandwidth": "10G"
-            }
+        },
+        {
+          "id": "f00b25df-2b8e-4a9f-8a72-9d53403d4488",
+          "props": {
+            "bandwidth": "10G"
           }
-        ]
+        }
       ],
       "props": {
         "local": false
@@ -77,43 +65,43 @@
   ],
   "nets": [
     {
-      "id": "12d4828c-6309-4758-9934-77db94a092c4",
+      "id": "ebb05033-5871-4542-a9b2-43ef13bf3467",
       "nodes": [
         {
-          "id": "e242c04e-c8f1-47dc-8563-e8cfd1f89120",
+          "id": "2d4db7f4-13a6-4dfb-91aa-ecdbd6d73f75",
           "endpoints": [
             {
-              "id": "fc0ac33a-9119-40b0-a030-e3fd5d4c7012",
+              "id": "b90f85cd-973a-41f7-9d35-13c619c1dd6c",
               "props": {
                 "bandwidth": "1G"
               }
             },
             {
-              "id": "a61f2928-0147-4cb5-a8de-389ab96f0f81",
+              "id": "65a414ed-4361-48fa-9c86-206413dd1c27",
               "props": {
                 "bandwidth": "1G"
               }
             },
             {
-              "id": "b1cd0ca3-53ca-4a2d-871c-e5cc88893c06",
+              "id": "6416e6d0-52ce-45b1-9eb4-0d7716ae14b0",
               "props": {
                 "bandwidth": "1G"
               }
             },
             {
-              "id": "2a7f1900-3172-4d0f-8672-d4f5b6eb590f",
+              "id": "28f3b90a-1c7c-4fc5-9c8d-39bd9aff5b6d",
               "props": {
                 "bandwidth": "1G"
               }
             },
             {
-              "id": "b7cc40cd-0c1f-4a2b-838e-804f4064f88c",
+              "id": "7bff9548-4d6f-4441-abed-c0670e3f40c1",
               "props": {
                 "bandwidth": "10G"
               }
             },
             {
-              "id": "d9f4cd9f-a4a9-4a29-b643-47bfdb90de6f",
+              "id": "f00b25df-2b8e-4a9f-8a72-9d53403d4488",
               "props": {
                 "bandwidth": "10G"
               }
@@ -121,13 +109,14 @@
           ],
           "props": {
             "name": "leaf"
-          }
+          },
+          "hardware": {}
         },
         {
-          "id": "0f40b3a0-5f10-414d-93e0-2ea6c0f12223",
+          "id": "e3b930c6-a079-4a71-a19b-0a8e7e6662e0",
           "endpoints": [
             {
-              "id": "03a3d3e3-9f1f-4ad9-bed8-d873ed36be13",
+              "id": "e8026514-8219-49c1-9ad3-6b427cb9cd2e",
               "props": {
                 "bandwidth": "1G"
               }
@@ -135,13 +124,14 @@
           ],
           "props": {
             "name": "a"
-          }
+          },
+          "hardware": {}
         },
         {
-          "id": "705a27d0-39c8-40be-8c74-a312bff8dfa9",
+          "id": "a752bd0c-4ee7-408b-9c00-dfe1fa39041c",
           "endpoints": [
             {
-              "id": "3b0c59ee-50a5-4120-b0a2-b77021418fc8",
+              "id": "f409ee7e-7739-448a-8075-feb1039150c3",
               "props": {
                 "bandwidth": "1G"
               }
@@ -149,13 +139,14 @@
           ],
           "props": {
             "name": "b"
-          }
+          },
+          "hardware": {}
         },
         {
-          "id": "5fede22a-00a9-48a2-af36-a83926ad5860",
+          "id": "abe12777-669f-47bb-9858-a204d5cc3d60",
           "endpoints": [
             {
-              "id": "b9d50429-256a-40c6-993d-fbcbdaa8080b",
+              "id": "ef88ee34-a493-4012-9bdb-108eff3798fc",
               "props": {
                 "bandwidth": "1G"
               }
@@ -163,13 +154,14 @@
           ],
           "props": {
             "name": "c"
-          }
+          },
+          "hardware": {}
         },
         {
-          "id": "39dc6bc4-6f37-4379-8469-0f8090e7ed1b",
+          "id": "73752051-d30b-4e5f-8fa7-e02713bdec6f",
           "endpoints": [
             {
-              "id": "79a7bcca-c0ce-4190-b128-736f7fc0b415",
+              "id": "a096a1a8-d4cf-429f-ad07-bb743ad57678",
               "props": {
                 "bandwidth": "1G"
               }
@@ -177,101 +169,86 @@
           ],
           "props": {
             "name": "d"
-          }
+          },
+          "hardware": {}
         }
       ],
       "links": [
         {
-          "id": "105c9d86-0f37-491e-80a1-c0b3a1caa7fa",
+          "id": "5eb26314-d0b3-41f7-b0f7-b2dcd2ee1585",
           "endpoints": [
-            [
-              {
-                "id": "fc0ac33a-9119-40b0-a030-e3fd5d4c7012",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            {
+              "id": "b90f85cd-973a-41f7-9d35-13c619c1dd6c",
+              "props": {
+                "bandwidth": "1G"
               }
-            ],
-            [
-              {
-                "id": "03a3d3e3-9f1f-4ad9-bed8-d873ed36be13",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            },
+            {
+              "id": "e8026514-8219-49c1-9ad3-6b427cb9cd2e",
+              "props": {
+                "bandwidth": "1G"
               }
-            ]
+            }
           ],
           "props": {
             "local": true
           }
         },
         {
-          "id": "0d28ae28-da4e-4a43-bdcc-7b3954977df2",
+          "id": "8ff1e12c-0236-475e-b4bb-097fea1f1ee4",
           "endpoints": [
-            [
-              {
-                "id": "a61f2928-0147-4cb5-a8de-389ab96f0f81",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            {
+              "id": "65a414ed-4361-48fa-9c86-206413dd1c27",
+              "props": {
+                "bandwidth": "1G"
               }
-            ],
-            [
-              {
-                "id": "3b0c59ee-50a5-4120-b0a2-b77021418fc8",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            },
+            {
+              "id": "f409ee7e-7739-448a-8075-feb1039150c3",
+              "props": {
+                "bandwidth": "1G"
               }
-            ]
+            }
           ],
           "props": {
             "local": true
           }
         },
         {
-          "id": "3f3b9e46-2901-4f4e-a218-12e8a32858dd",
+          "id": "7821be91-50bd-4441-bad8-5c640ff43bbc",
           "endpoints": [
-            [
-              {
-                "id": "b1cd0ca3-53ca-4a2d-871c-e5cc88893c06",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            {
+              "id": "6416e6d0-52ce-45b1-9eb4-0d7716ae14b0",
+              "props": {
+                "bandwidth": "1G"
               }
-            ],
-            [
-              {
-                "id": "b9d50429-256a-40c6-993d-fbcbdaa8080b",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            },
+            {
+              "id": "ef88ee34-a493-4012-9bdb-108eff3798fc",
+              "props": {
+                "bandwidth": "1G"
               }
-            ]
+            }
           ],
           "props": {
             "local": true
           }
         },
         {
-          "id": "903a0c86-1e5c-4304-b526-733690e1ea6d",
+          "id": "1a86414d-6301-46a1-9aa3-4dff68df98ec",
           "endpoints": [
-            [
-              {
-                "id": "2a7f1900-3172-4d0f-8672-d4f5b6eb590f",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            {
+              "id": "28f3b90a-1c7c-4fc5-9c8d-39bd9aff5b6d",
+              "props": {
+                "bandwidth": "1G"
               }
-            ],
-            [
-              {
-                "id": "79a7bcca-c0ce-4190-b128-736f7fc0b415",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            },
+            {
+              "id": "a096a1a8-d4cf-429f-ad07-bb743ad57678",
+              "props": {
+                "bandwidth": "1G"
               }
-            ]
+            }
           ],
           "props": {
             "local": true
@@ -282,43 +259,43 @@
       "props": {}
     },
     {
-      "id": "21f36f30-63f0-42da-b0a9-38cb3a6d6ac0",
+      "id": "ea7f5f7d-ea5f-4ef2-8808-036319c76e69",
       "nodes": [
         {
-          "id": "19aea562-535a-4be8-95b0-5a8d80865874",
+          "id": "e97f966c-7553-4901-bf0b-4f6734219d86",
           "endpoints": [
             {
-              "id": "8e216a38-3f85-4202-9919-8e7b7f576cd3",
+              "id": "78f8269b-cf9b-46c7-b2b2-afb802e978d5",
               "props": {
                 "bandwidth": "1G"
               }
             },
             {
-              "id": "52b76493-995b-4f2e-9e8b-5f9f24ea2c73",
+              "id": "50b387d1-f850-4e0b-8331-6528ed6fe460",
               "props": {
                 "bandwidth": "1G"
               }
             },
             {
-              "id": "92e1f4ac-c5cd-4b77-a9dd-3adae5eb6ad8",
+              "id": "9024ce1a-a0b4-4d64-8f25-69fc5ecd1987",
               "props": {
                 "bandwidth": "1G"
               }
             },
             {
-              "id": "1c656cfc-3fc4-45c5-ab73-220639ea33d2",
+              "id": "15fa6c23-8654-4702-a9d0-caf661f061f5",
               "props": {
                 "bandwidth": "1G"
               }
             },
             {
-              "id": "7bfd59f0-3d34-4b57-85e1-b9a93e1f1e7f",
+              "id": "88c0aec2-8f66-4ba9-bb69-148eb498cecc",
               "props": {
                 "bandwidth": "10G"
               }
             },
             {
-              "id": "da6743b3-e550-48c9-9d8d-bde449989b16",
+              "id": "8f4a3049-88d1-40fe-b0a3-ce5ba7bc98dc",
               "props": {
                 "bandwidth": "10G"
               }
@@ -326,13 +303,14 @@
           ],
           "props": {
             "name": "leaf"
-          }
+          },
+          "hardware": {}
         },
         {
-          "id": "c8c62b55-5aca-4290-8161-9a7da90a9292",
+          "id": "6818df9d-6731-4d11-9208-33319c7b3ef1",
           "endpoints": [
             {
-              "id": "a1a54aa0-d268-4811-b2b0-9566c51a807e",
+              "id": "ae2188fe-fe1a-4119-95df-a27a1d832b63",
               "props": {
                 "bandwidth": "1G"
               }
@@ -340,13 +318,14 @@
           ],
           "props": {
             "name": "a"
-          }
+          },
+          "hardware": {}
         },
         {
-          "id": "eb4d57e6-e850-46fd-b9f2-01df3bb1013b",
+          "id": "626e3529-ceb2-412d-8b05-689fc6e7a3f0",
           "endpoints": [
             {
-              "id": "de14cb02-8065-4acb-bd0f-e7b9f5331179",
+              "id": "cf91b056-3144-4b77-8fc6-5de2b563e36f",
               "props": {
                 "bandwidth": "1G"
               }
@@ -354,13 +333,14 @@
           ],
           "props": {
             "name": "b"
-          }
+          },
+          "hardware": {}
         },
         {
-          "id": "8eddb201-ea67-488d-bb55-3c2413f60aba",
+          "id": "bc7ba3e2-57bb-41d2-9953-b47e8b9e505c",
           "endpoints": [
             {
-              "id": "687babc0-b964-4e20-9311-f3938e1a2292",
+              "id": "cbc44693-07eb-4340-af6f-948488a75f43",
               "props": {
                 "bandwidth": "1G"
               }
@@ -368,13 +348,14 @@
           ],
           "props": {
             "name": "c"
-          }
+          },
+          "hardware": {}
         },
         {
-          "id": "cb20790e-a2b2-49ab-a786-c5024af95a8a",
+          "id": "0c95f573-edcb-4d16-9c4b-55970f02400b",
           "endpoints": [
             {
-              "id": "949007d7-0631-433e-94af-b19d94e0e629",
+              "id": "94e7c54c-363e-4b62-b2b4-66d929037988",
               "props": {
                 "bandwidth": "1G"
               }
@@ -382,101 +363,86 @@
           ],
           "props": {
             "name": "d"
-          }
+          },
+          "hardware": {}
         }
       ],
       "links": [
         {
-          "id": "9cf7570c-6f81-4c40-a810-5a5ee29ce486",
+          "id": "c8d24842-3c96-4439-aa6e-acdfc779fe33",
           "endpoints": [
-            [
-              {
-                "id": "8e216a38-3f85-4202-9919-8e7b7f576cd3",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            {
+              "id": "78f8269b-cf9b-46c7-b2b2-afb802e978d5",
+              "props": {
+                "bandwidth": "1G"
               }
-            ],
-            [
-              {
-                "id": "a1a54aa0-d268-4811-b2b0-9566c51a807e",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            },
+            {
+              "id": "ae2188fe-fe1a-4119-95df-a27a1d832b63",
+              "props": {
+                "bandwidth": "1G"
               }
-            ]
+            }
           ],
           "props": {
             "local": true
           }
         },
         {
-          "id": "ffbecddd-4fff-4ed7-8b24-b6c164e370b8",
+          "id": "0d741ab9-9d6d-4e37-ae68-1f36ed714c47",
           "endpoints": [
-            [
-              {
-                "id": "52b76493-995b-4f2e-9e8b-5f9f24ea2c73",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            {
+              "id": "50b387d1-f850-4e0b-8331-6528ed6fe460",
+              "props": {
+                "bandwidth": "1G"
               }
-            ],
-            [
-              {
-                "id": "de14cb02-8065-4acb-bd0f-e7b9f5331179",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            },
+            {
+              "id": "cf91b056-3144-4b77-8fc6-5de2b563e36f",
+              "props": {
+                "bandwidth": "1G"
               }
-            ]
+            }
           ],
           "props": {
             "local": true
           }
         },
         {
-          "id": "03b5c067-650a-4e68-8aa0-88769dd0cb53",
+          "id": "04651caa-5f68-49f8-b94a-087388ebc318",
           "endpoints": [
-            [
-              {
-                "id": "92e1f4ac-c5cd-4b77-a9dd-3adae5eb6ad8",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            {
+              "id": "9024ce1a-a0b4-4d64-8f25-69fc5ecd1987",
+              "props": {
+                "bandwidth": "1G"
               }
-            ],
-            [
-              {
-                "id": "687babc0-b964-4e20-9311-f3938e1a2292",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            },
+            {
+              "id": "cbc44693-07eb-4340-af6f-948488a75f43",
+              "props": {
+                "bandwidth": "1G"
               }
-            ]
+            }
           ],
           "props": {
             "local": true
           }
         },
         {
-          "id": "f2a586dc-23fe-44e2-a6b9-5dd7699f7eee",
+          "id": "abfb78bb-b28a-4f37-b2eb-59351927ef48",
           "endpoints": [
-            [
-              {
-                "id": "1c656cfc-3fc4-45c5-ab73-220639ea33d2",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            {
+              "id": "15fa6c23-8654-4702-a9d0-caf661f061f5",
+              "props": {
+                "bandwidth": "1G"
               }
-            ],
-            [
-              {
-                "id": "949007d7-0631-433e-94af-b19d94e0e629",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            },
+            {
+              "id": "94e7c54c-363e-4b62-b2b4-66d929037988",
+              "props": {
+                "bandwidth": "1G"
               }
-            ]
+            }
           ],
           "props": {
             "local": true
@@ -487,43 +453,43 @@
       "props": {}
     },
     {
-      "id": "03f9dd1d-25ef-4684-8dfc-aefbf20fd5a3",
+      "id": "25764ad5-e9cc-47ff-8dd6-b8468ad1c6b9",
       "nodes": [
         {
-          "id": "7336ed15-e8d1-4be5-8f6d-0be42edb6b01",
+          "id": "e870e1e8-7b1e-48fa-a426-1f911ac21dcb",
           "endpoints": [
             {
-              "id": "ba0a5219-5c73-4275-97c8-602c5bf0d45c",
+              "id": "d9490211-0a6e-4997-ab1b-5c77cc15a323",
               "props": {
                 "bandwidth": "1G"
               }
             },
             {
-              "id": "d73ee650-805d-4987-a3e0-c7d7c166b1c7",
+              "id": "6384ada4-5980-417b-932d-ed020ba7a0b6",
               "props": {
                 "bandwidth": "1G"
               }
             },
             {
-              "id": "16c048a4-97ae-483a-a541-8289a6afedbf",
+              "id": "355d44ef-e6ae-40f1-a98a-38c26fa7a1fa",
               "props": {
                 "bandwidth": "1G"
               }
             },
             {
-              "id": "3d328eb5-4f4f-4755-a92f-288fab089789",
+              "id": "c2699aa6-aaa3-4be3-bb7e-c46b2bcc598b",
               "props": {
                 "bandwidth": "1G"
               }
             },
             {
-              "id": "2a5cbf45-8c8e-4fac-a16f-c91931ea8a8e",
+              "id": "a435d293-6654-4d8c-a4a0-a475b5ab9ac5",
               "props": {
                 "bandwidth": "10G"
               }
             },
             {
-              "id": "16f8ca0b-b9e1-4fbe-8ed5-550f3dfe6e01",
+              "id": "c8978c5b-1c73-43c6-b83a-cf1b749bdc4d",
               "props": {
                 "bandwidth": "10G"
               }
@@ -531,13 +497,14 @@
           ],
           "props": {
             "name": "leaf"
-          }
+          },
+          "hardware": {}
         },
         {
-          "id": "857231e4-8200-4ace-a804-188c0ca47622",
+          "id": "0c6de8c2-0c8c-4680-a9a8-800ca55c7595",
           "endpoints": [
             {
-              "id": "3d1f2463-2b8f-45fe-a34f-7c3471485ba4",
+              "id": "0c62aa79-e5dd-43f2-9043-b26bfcdb8191",
               "props": {
                 "bandwidth": "1G"
               }
@@ -545,13 +512,14 @@
           ],
           "props": {
             "name": "a"
-          }
+          },
+          "hardware": {}
         },
         {
-          "id": "19a22883-54ae-43d4-9423-bf4f71ec6bde",
+          "id": "cda655c2-2a7f-4898-bc70-6772c248b5e4",
           "endpoints": [
             {
-              "id": "82f918b1-388b-4171-a1a3-b5f37f483d42",
+              "id": "a06468ab-81ab-46b2-983e-2790b015f2ad",
               "props": {
                 "bandwidth": "1G"
               }
@@ -559,13 +527,14 @@
           ],
           "props": {
             "name": "b"
-          }
+          },
+          "hardware": {}
         },
         {
-          "id": "04426930-d4ef-42ab-8c26-090d2e5a37bc",
+          "id": "954b4eaa-3685-4a60-8441-f8175c971b01",
           "endpoints": [
             {
-              "id": "74933331-1b19-4b24-8e80-5c25fab6afff",
+              "id": "4a4f9f79-c3c3-4a8a-b0f8-74d128c7d0b5",
               "props": {
                 "bandwidth": "1G"
               }
@@ -573,13 +542,14 @@
           ],
           "props": {
             "name": "c"
-          }
+          },
+          "hardware": {}
         },
         {
-          "id": "83161d31-a736-4ff2-a826-7f20881c5da8",
+          "id": "450e085b-9ec5-43f2-ad3e-0a35edea8614",
           "endpoints": [
             {
-              "id": "3bfd5091-bb90-4e0e-9b9a-130b95fac9ca",
+              "id": "2e5720e2-fd57-4fb4-8498-c701cbb025ae",
               "props": {
                 "bandwidth": "1G"
               }
@@ -587,101 +557,86 @@
           ],
           "props": {
             "name": "d"
-          }
+          },
+          "hardware": {}
         }
       ],
       "links": [
         {
-          "id": "369daafd-a310-4806-bbaa-7022fc760611",
+          "id": "be424bca-7a6b-4e34-8d13-7738c03de3dc",
           "endpoints": [
-            [
-              {
-                "id": "ba0a5219-5c73-4275-97c8-602c5bf0d45c",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            {
+              "id": "d9490211-0a6e-4997-ab1b-5c77cc15a323",
+              "props": {
+                "bandwidth": "1G"
               }
-            ],
-            [
-              {
-                "id": "3d1f2463-2b8f-45fe-a34f-7c3471485ba4",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            },
+            {
+              "id": "0c62aa79-e5dd-43f2-9043-b26bfcdb8191",
+              "props": {
+                "bandwidth": "1G"
               }
-            ]
+            }
           ],
           "props": {
             "local": true
           }
         },
         {
-          "id": "2a08637b-41b6-40ce-aea1-c69c82c371e5",
+          "id": "ce8f1750-9a7c-4efc-b0b0-bc042d574685",
           "endpoints": [
-            [
-              {
-                "id": "d73ee650-805d-4987-a3e0-c7d7c166b1c7",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            {
+              "id": "6384ada4-5980-417b-932d-ed020ba7a0b6",
+              "props": {
+                "bandwidth": "1G"
               }
-            ],
-            [
-              {
-                "id": "82f918b1-388b-4171-a1a3-b5f37f483d42",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            },
+            {
+              "id": "a06468ab-81ab-46b2-983e-2790b015f2ad",
+              "props": {
+                "bandwidth": "1G"
               }
-            ]
+            }
           ],
           "props": {
             "local": true
           }
         },
         {
-          "id": "75c9e36c-d861-448a-8ce1-2450fa8dd15c",
+          "id": "1830a25b-4544-4ed1-a471-03b60df35655",
           "endpoints": [
-            [
-              {
-                "id": "16c048a4-97ae-483a-a541-8289a6afedbf",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            {
+              "id": "355d44ef-e6ae-40f1-a98a-38c26fa7a1fa",
+              "props": {
+                "bandwidth": "1G"
               }
-            ],
-            [
-              {
-                "id": "74933331-1b19-4b24-8e80-5c25fab6afff",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            },
+            {
+              "id": "4a4f9f79-c3c3-4a8a-b0f8-74d128c7d0b5",
+              "props": {
+                "bandwidth": "1G"
               }
-            ]
+            }
           ],
           "props": {
             "local": true
           }
         },
         {
-          "id": "0e088a52-636b-4e17-99a5-eb98ae8f74a1",
+          "id": "6d8bb013-0413-49ad-8dc4-ff4ee886efe9",
           "endpoints": [
-            [
-              {
-                "id": "3d328eb5-4f4f-4755-a92f-288fab089789",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            {
+              "id": "c2699aa6-aaa3-4be3-bb7e-c46b2bcc598b",
+              "props": {
+                "bandwidth": "1G"
               }
-            ],
-            [
-              {
-                "id": "3bfd5091-bb90-4e0e-9b9a-130b95fac9ca",
-                "props": {
-                  "bandwidth": "1G"
-                }
+            },
+            {
+              "id": "2e5720e2-fd57-4fb4-8498-c701cbb025ae",
+              "props": {
+                "bandwidth": "1G"
               }
-            ]
+            }
           ],
           "props": {
             "local": true

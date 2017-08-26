@@ -1,0 +1,65 @@
+{
+  "nodes": [
+    {
+      "id": "2d56581a",
+      "endpoints": [ { "id": "7bc7462c", "props": {} } ],
+      "props": {
+        "name": "a",
+        "software": { "os=": "ubuntu16.04" }
+      }
+    },
+    {
+      "id": "4fdc682c",
+      "endpoints": [ { "id": "96d7c26f", "props": {} } ],
+      "props": {
+        "name": "b",
+        "software": { "os=": "debian9" }
+      }
+    },
+    {
+      "id": "68f342ba",
+      "endpoints": [
+        { "id": "ada2c5ce", "props": {} },
+        { "id": "4ec2827c", "props": {} },
+        { "id": "258e3153", "props": {} }
+      ],
+      "props": { "name": "s" }
+    },
+    {
+      "id": "5ed838f8",
+      "endpoints": [ { "id": "c80ad3a4", "props": {} } ],
+      "props": {
+        "name": "d",
+        "software": { "os=": "freebsd11" }
+      }
+    }
+  ],
+  "links": [
+    {
+      "id": "edf18311",
+      "endpoints": [
+        { "id": "7bc7462c", "props": {} },
+        { "id": "ada2c5ce", "props": {} }
+      ],
+      "props": {}
+    },
+    {
+      "id": "6693c375",
+      "endpoints": [
+        { "id": "96d7c26f", "props": {} },
+        { "id": "4ec2827c", "props": {} }
+      ],
+      "props": {}
+    },
+    {
+      "id": "5a00442c",
+      "endpoints": [
+        { "id": "c80ad3a4", "props": {} },
+        { "id": "258e3153", "props": {} }
+      ],
+      "props": {}
+    }
+  ],
+  "nets": null,
+  "props": {}
+}

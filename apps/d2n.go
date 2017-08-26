@@ -13,8 +13,9 @@ package main
 import (
 	"database/sql"
 	"encoding/json"
+	"github.com/deter-project/testbed/core/nmir"
+	"github.com/deter-project/testbed/core/nmir/viz"
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/rcgoodfellow/nmir"
 	"io/ioutil"
 	"log"
 	"os"
@@ -65,24 +66,7 @@ func main() {
 	}
 	ioutil.WriteFile("dnet.json", buf, 0644)
 
-	nmir.PNetSvg("qdnet", net)
-
-	/*
-		err = nmir.NetSvg("dnet", net)
-		if err != nil {
-			log.Fatal(err)
-		}
-	*/
-
-	/*
-		nmir.VTag(net)
-
-		buf, err = json.MarshalIndent(net, "", "  ")
-		if err != nil {
-			log.Fatal(err)
-		}
-		ioutil.WriteFile("dnet_vt.json", buf, 0644)
-	*/
+	viz.NetSvg("qdnet", net)
 
 }
 
@@ -104,21 +88,8 @@ func buildNet(wires []Wire) *nmir.Net {
 	}
 
 	for _, w := range wires {
-		//a := net.Node().Set(nmir.Props{"name": w.a}).Endpoint()
-		//b := net.Node().Set(nmir.Props{"name": w.b}).Endpoint()
-		net.Link(
-			[]*nmir.Endpoint{m[w.a].Endpoint()},
-			[]*nmir.Endpoint{m[w.b].Endpoint()},
-		)
+		net.Link(m[w.a].Endpoint(), m[w.b].Endpoint())
 	}
-
-	/*
-		for _, n := range net.Nodes {
-
-			log.Printf("%s %d", n.Props["name"], n.Valence())
-
-		}
-	*/
 
 	return net
 
@@ -146,7 +117,6 @@ func collectWires() []Wire {
 		if err != nil {
 			log.Fatal(err)
 		}
-		//log.Printf("%s %s", a, b)
 		wires = append(wires, Wire{a, b})
 	}
 

@@ -1,0 +1,1015 @@
+{
+  "id": "73243c22-fe93-4d7c-b4bd-01e7e9fce309",
+  "nodes": [
+    {
+      "id": "55afdd4e-4c90-4321-9704-984647f963ef",
+      "endpoints": [
+        {
+          "id": "3438ef12-d79b-439b-a05d-0b303d325238",
+          "props": {}
+        },
+        {
+          "id": "f1917595-d0db-48cd-878b-dc25ae1ec870",
+          "props": {}
+        },
+        {
+          "id": "d0e2ad8f-0105-4bf1-935b-041785a0e6d8",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "r0",
+        "software": [
+          {
+            "name=": "cumulus"
+          }
+        ]
+      }
+    },
+    {
+      "id": "14ae68d0-f90c-4785-be58-6e87e6d4b1a0",
+      "endpoints": [
+        {
+          "id": "ecc1b4f3-7e82-433e-a0c7-7c8ece48baef",
+          "props": {}
+        },
+        {
+          "id": "3e616178-14d2-45c8-af0d-03a8fd87f335",
+          "props": {}
+        },
+        {
+          "id": "45e06bae-9e65-4912-93df-e1567564ffaf",
+          "props": {}
+        },
+        {
+          "id": "e9b56bad-7731-4c88-8aba-af429d642d48",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "r1",
+        "software": [
+          {
+            "name=": "cumulus"
+          }
+        ]
+      }
+    },
+    {
+      "id": "aa3e7a30-df7a-46bd-ae47-dc3028f4837b",
+      "endpoints": [
+        {
+          "id": "dea9ebdc-e74f-4712-9abf-b93acd59fdbf",
+          "props": {}
+        },
+        {
+          "id": "630ac990-7976-4a12-8293-70fc832b8ca3",
+          "props": {}
+        },
+        {
+          "id": "6d638b5a-8fdd-4b9a-bbec-7f6a90cf5a86",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "r2",
+        "software": [
+          {
+            "name=": "cumulus"
+          }
+        ]
+      }
+    },
+    {
+      "id": "3fdf16d8-a278-49aa-ab4a-727cc9617f4a",
+      "endpoints": [
+        {
+          "id": "f91f1cc3-829b-4c7a-8eca-c147a12b2550",
+          "props": {}
+        },
+        {
+          "id": "1ae1feef-27df-4a96-bd86-f94d05403e16",
+          "props": {}
+        },
+        {
+          "id": "dfd653ab-a17f-44ea-91e9-b753a6d27a34",
+          "props": {}
+        },
+        {
+          "id": "76fd7897-2a8d-4bb0-b4a4-4fff08d59d88",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "tower",
+        "software": [
+          {
+            "name=": "lte-linux"
+          }
+        ]
+      }
+    },
+    {
+      "id": "699d8b12-ce86-4fc1-b495-84580e80dcf8",
+      "endpoints": [
+        {
+          "id": "748d24a1-6d59-46a4-b0a5-8d8d38d0cc14",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "droid0",
+        "software": [
+          {
+            "name=": "android-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "7d6c58cd-f398-45e4-a5eb-30c4c29792fe",
+      "endpoints": [
+        {
+          "id": "c65c7a37-d947-4961-9109-423fbfd72438",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "droid1",
+        "software": [
+          {
+            "name=": "android-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "7d788fe8-e58e-4759-855a-7a5510ba58ff",
+      "endpoints": [
+        {
+          "id": "1a5822a5-3b65-4eab-b227-815780d53527",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "droid2",
+        "software": [
+          {
+            "name=": "android-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "d0e6916f-d648-4de3-a020-17a210b569ad",
+      "endpoints": [
+        {
+          "id": "0d96045e-6a1f-4739-a009-f12ffa48b3d8",
+          "props": {}
+        },
+        {
+          "id": "d225c7f4-2070-4c5d-a56b-97d43ed1b529",
+          "props": {}
+        },
+        {
+          "id": "bd4ec12b-69bd-4b23-aea5-eec7f9c158e4",
+          "props": {}
+        },
+        {
+          "id": "842d7732-52c3-4b75-b438-dd873542dda2",
+          "props": {}
+        },
+        {
+          "id": "2489f29d-1eb1-4764-926c-16dad7c2e65f",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "rtr",
+        "software": [
+          {
+            "name=": "vyatta"
+          }
+        ]
+      }
+    },
+    {
+      "id": "17c0b545-f0b9-4c2e-8e91-5d18f829cc38",
+      "endpoints": [
+        {
+          "id": "b4f4249d-88a1-4f3d-b9f4-527885306bfc",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "bob-phone",
+        "software": [
+          {
+            "name=": "android"
+          }
+        ]
+      }
+    },
+    {
+      "id": "55551b1a-4b6e-402e-9d39-24cf19c6f130",
+      "endpoints": [
+        {
+          "id": "1d882542-544a-4cc4-9218-8525eb070820",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "alice-phone",
+        "software": [
+          {
+            "name=": "android-6"
+          }
+        ]
+      }
+    },
+    {
+      "id": "7a2fd0d0-e032-4d9c-b444-9ef3874b8fcd",
+      "endpoints": [
+        {
+          "id": "b7df2f11-b716-48d6-a433-16b1d9a5abaa",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "tv",
+        "software": [
+          {
+            "name=": "plex"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f3272ee1-b1ac-4332-b700-ab7b3d54afc4",
+      "endpoints": [
+        {
+          "id": "3a5b5d03-1dc3-454a-869d-27d69b59b34c",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "homepc",
+        "software": [
+          {
+            "name=": "windows-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c70b8ac1-736e-44bb-84ee-ef7da4bd2de8",
+      "endpoints": [
+        {
+          "id": "3ff280c2-c702-49de-acd8-e45d70e91fac",
+          "props": {}
+        },
+        {
+          "id": "4300e374-33bc-45c6-823d-586c2ca2f840",
+          "props": {}
+        },
+        {
+          "id": "b5eb60c0-a4b7-4fd7-9794-fb5f99fe5d06",
+          "props": {}
+        },
+        {
+          "id": "a8d4b132-b151-4da4-af6e-6852e56a5649",
+          "props": {}
+        },
+        {
+          "id": "3b61a92a-a08b-4344-954c-0cd7fd49e87f",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "edge",
+        "phys": "true",
+        "software": [
+          {
+            "name=": "freebsd-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "8bdab6f2-1c14-4429-893a-9c7b72b4bccd",
+      "endpoints": [
+        {
+          "id": "6ddc96b1-696a-46db-9c42-7dec2f6abc6b",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "srv0",
+        "software": [
+          {
+            "name=": "centos-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "4e601450-8fa9-4acf-ace3-16bd476998a2",
+      "endpoints": [
+        {
+          "id": "b34f2245-f9ad-4742-a53a-643eff8874e3",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "srv1",
+        "software": [
+          {
+            "name=": "centos-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a42b81f9-5751-4595-9d37-275be92a37f1",
+      "endpoints": [
+        {
+          "id": "18ca583a-a2bd-43eb-b9dd-1c148b80182f",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "srv2",
+        "software": [
+          {
+            "name=": "centos-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "250fc684-d7d1-4019-b857-e514f0175a1f",
+      "endpoints": [
+        {
+          "id": "a5a147b2-3039-438e-b352-5d28588d1d8f",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "srv3",
+        "software": [
+          {
+            "name=": "centos-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bee818cb-2898-4f25-968c-43fbf8015d97",
+      "endpoints": [
+        {
+          "id": "546d4086-1dc6-4e83-af66-82a322178639",
+          "props": {}
+        },
+        {
+          "id": "163a02ab-9ac5-430d-aa56-2453b5763a71",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "firewall",
+        "software": [
+          {
+            "name=": "palo-alto"
+          }
+        ]
+      }
+    },
+    {
+      "id": "92ca70bf-20a4-48fb-877c-dda5ef58147c",
+      "endpoints": [
+        {
+          "id": "4dee164f-efa2-49be-be0c-bbbab8bdabef",
+          "props": {}
+        },
+        {
+          "id": "b57e28bb-3dcc-4d9f-84e2-728c25588035",
+          "props": {}
+        },
+        {
+          "id": "2edc68b5-81f5-4a92-9fad-aab4f2802671",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "backbone",
+        "software": [
+          {
+            "name=": "cumulus"
+          }
+        ]
+      }
+    },
+    {
+      "id": "4ee5a6f0-685c-4069-b1b9-894a2a396fa9",
+      "endpoints": [
+        {
+          "id": "f9c56f4b-9ffe-43c0-9c73-0d16d2c5d882",
+          "props": {}
+        },
+        {
+          "id": "f5e6950d-8671-4518-80a2-341b06d7f573",
+          "props": {}
+        },
+        {
+          "id": "47fe4825-41b2-4184-9564-ef4651da91f6",
+          "props": {}
+        },
+        {
+          "id": "bcd940bb-9ed2-4c1c-8474-c6b0be33d1bd",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "workgroup0",
+        "software": [
+          {
+            "name=": "cumulus"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b7169380-e812-4553-8e94-1716cc31b321",
+      "endpoints": [
+        {
+          "id": "4829836f-bd93-404e-9812-49760e25b674",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "workstation0",
+        "phys": "true",
+        "software": [
+          {
+            "name=": "windows-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bc553755-8d8a-42cd-b93c-4a09395fa87e",
+      "endpoints": [
+        {
+          "id": "36db813f-6654-4213-b4b5-a621bfe23579",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "workstation1",
+        "phys": "true",
+        "software": [
+          {
+            "name=": "windows-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e7514d45-e26b-4cc9-8732-12e7cb489d86",
+      "endpoints": [
+        {
+          "id": "41ecf4bb-f9b7-4608-adc5-9d9aa414d3c8",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "workstation2",
+        "phys": "true",
+        "software": [
+          {
+            "name=": "windows-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b1e909b0-8bf3-4916-90e9-36d1b44be607",
+      "endpoints": [
+        {
+          "id": "2770a44d-d080-4dce-8121-0240f5ec7a24",
+          "props": {}
+        },
+        {
+          "id": "8f89929e-967c-40c2-a5d3-4d85edf1c816",
+          "props": {}
+        },
+        {
+          "id": "02dcb86d-d7ab-43f8-9666-ee9b0bd8a374",
+          "props": {}
+        },
+        {
+          "id": "a5cc67d0-2ffc-4ecd-a890-798a9954ab6a",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "workgroup1",
+        "software": [
+          {
+            "name=": "cumulus"
+          }
+        ]
+      }
+    },
+    {
+      "id": "109cdc13-f875-409a-9dab-850c145e0cae",
+      "endpoints": [
+        {
+          "id": "7857a549-8f09-43d6-a9e0-2697fc045c2a",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "workstation2",
+        "phys": "true",
+        "software": [
+          {
+            "name=": "windows-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dc4d2c18-bf7f-4e01-ba45-7a7f6a7949e9",
+      "endpoints": [
+        {
+          "id": "dcab1c72-3c8f-4bec-9e62-86a48476c577",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "workstation3",
+        "phys": "true",
+        "software": [
+          {
+            "name=": "windows-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "4ffc9d50-ff60-4931-bd83-2ced20792dae",
+      "endpoints": [
+        {
+          "id": "22287c86-bb48-4fc1-ab26-68b1e834cb8f",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "workstation4",
+        "phys": "true",
+        "software": [
+          {
+            "name=": "windows-7"
+          }
+        ]
+      }
+    }
+  ],
+  "links": [
+    {
+      "id": "fd596f3d-5c66-4378-96f3-42329b6be6b9",
+      "endpoints": [
+        {
+          "id": "3438ef12-d79b-439b-a05d-0b303d325238",
+          "props": {}
+        },
+        {
+          "id": "ecc1b4f3-7e82-433e-a0c7-7c8ece48baef",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "8cac630f-8e1a-49be-8284-e9300b9063ff",
+      "endpoints": [
+        {
+          "id": "3e616178-14d2-45c8-af0d-03a8fd87f335",
+          "props": {}
+        },
+        {
+          "id": "dea9ebdc-e74f-4712-9abf-b93acd59fdbf",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "3c6084bf-1367-4ca9-b0d7-d416e8aee169",
+      "endpoints": [
+        {
+          "id": "630ac990-7976-4a12-8293-70fc832b8ca3",
+          "props": {}
+        },
+        {
+          "id": "f1917595-d0db-48cd-878b-dc25ae1ec870",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "98c5865b-7d08-4321-9f26-31021f69ec5c",
+      "endpoints": [
+        {
+          "id": "748d24a1-6d59-46a4-b0a5-8d8d38d0cc14",
+          "props": {}
+        },
+        {
+          "id": "f91f1cc3-829b-4c7a-8eca-c147a12b2550",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "1cfb3ff0-282d-4a96-becc-a8727dde77a5",
+      "endpoints": [
+        {
+          "id": "c65c7a37-d947-4961-9109-423fbfd72438",
+          "props": {}
+        },
+        {
+          "id": "1ae1feef-27df-4a96-bd86-f94d05403e16",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "beb6edaf-7903-435e-8fda-ccd92f351337",
+      "endpoints": [
+        {
+          "id": "1a5822a5-3b65-4eab-b227-815780d53527",
+          "props": {}
+        },
+        {
+          "id": "dfd653ab-a17f-44ea-91e9-b753a6d27a34",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "bb0fc7fb-156a-464e-b087-a1077add5473",
+      "endpoints": [
+        {
+          "id": "76fd7897-2a8d-4bb0-b4a4-4fff08d59d88",
+          "props": {}
+        },
+        {
+          "id": "d0e2ad8f-0105-4bf1-935b-041785a0e6d8",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "03b033cf-88e4-456d-8ee8-079ed9d28746",
+      "endpoints": [
+        {
+          "id": "0d96045e-6a1f-4739-a009-f12ffa48b3d8",
+          "props": {}
+        },
+        {
+          "id": "45e06bae-9e65-4912-93df-e1567564ffaf",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "b84e4d19-5f39-4029-9b7f-78a9b2410efd",
+      "endpoints": [
+        {
+          "id": "b4f4249d-88a1-4f3d-b9f4-527885306bfc",
+          "props": {}
+        },
+        {
+          "id": "d225c7f4-2070-4c5d-a56b-97d43ed1b529",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "e1aa43e2-949a-4f84-abf2-4d05bd5f93cf",
+      "endpoints": [
+        {
+          "id": "1d882542-544a-4cc4-9218-8525eb070820",
+          "props": {}
+        },
+        {
+          "id": "bd4ec12b-69bd-4b23-aea5-eec7f9c158e4",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "ce29fade-8dcd-4b6a-a2d5-356a16cefb77",
+      "endpoints": [
+        {
+          "id": "b7df2f11-b716-48d6-a433-16b1d9a5abaa",
+          "props": {}
+        },
+        {
+          "id": "842d7732-52c3-4b75-b438-dd873542dda2",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "557ce1d1-3478-4937-8eb3-52ad2913c887",
+      "endpoints": [
+        {
+          "id": "3a5b5d03-1dc3-454a-869d-27d69b59b34c",
+          "props": {}
+        },
+        {
+          "id": "2489f29d-1eb1-4764-926c-16dad7c2e65f",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "c64891d4-6932-4efa-bbd1-1bdba09a3768",
+      "endpoints": [
+        {
+          "id": "3ff280c2-c702-49de-acd8-e45d70e91fac",
+          "props": {}
+        },
+        {
+          "id": "e9b56bad-7731-4c88-8aba-af429d642d48",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "483ed0a9-beba-4ef7-8449-fc6dd4bf5e13",
+      "endpoints": [
+        {
+          "id": "4300e374-33bc-45c6-823d-586c2ca2f840",
+          "props": {}
+        },
+        {
+          "id": "6ddc96b1-696a-46db-9c42-7dec2f6abc6b",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "f03d6372-cb56-459c-954d-f24cc1c4f295",
+      "endpoints": [
+        {
+          "id": "b5eb60c0-a4b7-4fd7-9794-fb5f99fe5d06",
+          "props": {}
+        },
+        {
+          "id": "b34f2245-f9ad-4742-a53a-643eff8874e3",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "7fdf9d8d-96f4-4c30-98eb-7b2d1846d184",
+      "endpoints": [
+        {
+          "id": "a8d4b132-b151-4da4-af6e-6852e56a5649",
+          "props": {}
+        },
+        {
+          "id": "18ca583a-a2bd-43eb-b9dd-1c148b80182f",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "5d1168c2-04b4-4265-b55c-019497d8db27",
+      "endpoints": [
+        {
+          "id": "3b61a92a-a08b-4344-954c-0cd7fd49e87f",
+          "props": {}
+        },
+        {
+          "id": "a5a147b2-3039-438e-b352-5d28588d1d8f",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "f86ed78c-6d6c-467b-bd62-ed06951ac365",
+      "endpoints": [
+        {
+          "id": "546d4086-1dc6-4e83-af66-82a322178639",
+          "props": {}
+        },
+        {
+          "id": "6d638b5a-8fdd-4b9a-bbec-7f6a90cf5a86",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "fe549478-8cd6-4595-84a6-a1786176352a",
+      "endpoints": [
+        {
+          "id": "4dee164f-efa2-49be-be0c-bbbab8bdabef",
+          "props": {}
+        },
+        {
+          "id": "163a02ab-9ac5-430d-aa56-2453b5763a71",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "e79303f4-52aa-4a55-a9f3-2969e7e15d4e",
+      "endpoints": [
+        {
+          "id": "f9c56f4b-9ffe-43c0-9c73-0d16d2c5d882",
+          "props": {}
+        },
+        {
+          "id": "b57e28bb-3dcc-4d9f-84e2-728c25588035",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "c96be70f-10d3-4412-bb81-9c6e96767319",
+      "endpoints": [
+        {
+          "id": "f5e6950d-8671-4518-80a2-341b06d7f573",
+          "props": {}
+        },
+        {
+          "id": "4829836f-bd93-404e-9812-49760e25b674",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "2cf0798e-989d-4fb3-bc17-091ae5f35236",
+      "endpoints": [
+        {
+          "id": "47fe4825-41b2-4184-9564-ef4651da91f6",
+          "props": {}
+        },
+        {
+          "id": "36db813f-6654-4213-b4b5-a621bfe23579",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "e216ab1b-08d3-4c25-95da-b27eab774ca3",
+      "endpoints": [
+        {
+          "id": "bcd940bb-9ed2-4c1c-8474-c6b0be33d1bd",
+          "props": {}
+        },
+        {
+          "id": "41ecf4bb-f9b7-4608-adc5-9d9aa414d3c8",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "a9422754-b34c-4f64-860b-8e2f238c68f4",
+      "endpoints": [
+        {
+          "id": "2770a44d-d080-4dce-8121-0240f5ec7a24",
+          "props": {}
+        },
+        {
+          "id": "2edc68b5-81f5-4a92-9fad-aab4f2802671",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "4a759f3a-6f58-4b23-a403-0498610e8c59",
+      "endpoints": [
+        {
+          "id": "8f89929e-967c-40c2-a5d3-4d85edf1c816",
+          "props": {}
+        },
+        {
+          "id": "7857a549-8f09-43d6-a9e0-2697fc045c2a",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "d1ac1e92-dd42-4165-b70f-f2b2ae1e5756",
+      "endpoints": [
+        {
+          "id": "02dcb86d-d7ab-43f8-9666-ee9b0bd8a374",
+          "props": {}
+        },
+        {
+          "id": "dcab1c72-3c8f-4bec-9e62-86a48476c577",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    },
+    {
+      "id": "716fe044-76c4-4716-aa31-6198ad5aed47",
+      "endpoints": [
+        {
+          "id": "a5cc67d0-2ffc-4ecd-a890-798a9954ab6a",
+          "props": {}
+        },
+        {
+          "id": "22287c86-bb48-4fc1-ab26-68b1e834cb8f",
+          "props": {}
+        }
+      ],
+      "props": {
+        "local": true
+      }
+    }
+  ],
+  "nets": null,
+  "props": {}
+}
