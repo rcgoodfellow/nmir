@@ -1,0 +1,1339 @@
+{
+  "id": "fee15820-efdc-49ea-ac5a-05822b319c28",
+  "nodes": [
+    {
+      "id": "5ca8f3f9-ae6e-4438-9e31-b4d9495f5330",
+      "endpoints": [
+        {
+          "id": "56903d85-48d3-4c69-9175-b1d3503f0b9b",
+          "props": {}
+        },
+        {
+          "id": "3fa4d7ec-0760-4e0f-9632-317ed0fc44b9",
+          "props": {}
+        },
+        {
+          "id": "1019d522-0d37-4ec5-a15f-1c0cc1678c6f",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "r0",
+        "software": [
+          {
+            "name=": "cumulus"
+          }
+        ]
+      }
+    },
+    {
+      "id": "70cb919a-7ce6-49e1-897d-ef3c7dea6d89",
+      "endpoints": [
+        {
+          "id": "761455d5-489b-4282-b012-140629f0e879",
+          "props": {}
+        },
+        {
+          "id": "be15a996-3e00-4c48-92a7-c699982f9a57",
+          "props": {}
+        },
+        {
+          "id": "855cf5cb-a67b-4cc7-885e-97dfedc161d5",
+          "props": {}
+        },
+        {
+          "id": "308d3bfa-adc4-465b-bb5f-b71bce78d5e2",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "r1",
+        "software": [
+          {
+            "name=": "cumulus"
+          }
+        ]
+      }
+    },
+    {
+      "id": "72f3988d-7068-4e2f-8eb3-228f870cd49a",
+      "endpoints": [
+        {
+          "id": "15db64c0-deb2-4a6f-b7f9-d8b265a118f1",
+          "props": {}
+        },
+        {
+          "id": "631c903f-b2d6-4af7-8ec4-65ad405d5e29",
+          "props": {}
+        },
+        {
+          "id": "e356aafd-bbc0-4da3-9ab4-9b7588bda535",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "r2",
+        "software": [
+          {
+            "name=": "cumulus"
+          }
+        ]
+      }
+    },
+    {
+      "id": "0a8be060-53fc-4200-ad4b-6a6228af4d1d",
+      "endpoints": [
+        {
+          "id": "b37895e0-df80-4908-9ff9-f203e1c4efe6",
+          "props": {}
+        },
+        {
+          "id": "d58328d2-2601-4c2d-b718-d6248776e953",
+          "props": {}
+        },
+        {
+          "id": "85ed698b-1cb7-48df-83d4-7ae5aaecf680",
+          "props": {}
+        },
+        {
+          "id": "c80313fb-9150-44c4-ad5a-e9a2fc48f83a",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "tower",
+        "software": [
+          {
+            "name=": "lte-linux"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b944771b-8354-4f44-a7f7-9bf98ef51c31",
+      "endpoints": [
+        {
+          "id": "1f9f886f-e97d-4fc8-a6c8-088812f2977a",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "droid0",
+        "software": [
+          {
+            "name=": "android-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c2e7ed26-f20b-41a2-ae5a-3c9bea4aa4dd",
+      "endpoints": [
+        {
+          "id": "69ce11c6-7841-4bb8-9e0f-7ace714bc83e",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "droid1",
+        "software": [
+          {
+            "name=": "android-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c0a2af35-c4ba-49e0-811f-1bf49546b294",
+      "endpoints": [
+        {
+          "id": "df6d4857-b5e5-45dd-927d-b218e3c5d0d1",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "droid2",
+        "software": [
+          {
+            "name=": "android-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "86f81514-e4d4-4968-b7d4-2d3b3daea7ff",
+      "endpoints": [
+        {
+          "id": "cd1559b8-7abd-4739-a7aa-49ec0b5736c0",
+          "props": {}
+        },
+        {
+          "id": "06950637-b946-4d44-a171-05d083516584",
+          "props": {}
+        },
+        {
+          "id": "6e4f48d8-abc4-4cc8-a3c8-2886e7370474",
+          "props": {}
+        },
+        {
+          "id": "d0eb39b9-19be-4422-a023-980444b40e90",
+          "props": {}
+        },
+        {
+          "id": "64a8a7f1-fdbb-404f-8ebb-0651eab03bac",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "rtr",
+        "software": [
+          {
+            "name=": "vyatta"
+          }
+        ]
+      }
+    },
+    {
+      "id": "25f31ea2-b103-4456-b6d5-363287490b64",
+      "endpoints": [
+        {
+          "id": "aed6a40a-4e1c-4ded-8d93-ce699476135d",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "bob-phone",
+        "software": [
+          {
+            "name=": "android"
+          }
+        ]
+      }
+    },
+    {
+      "id": "064d3513-0569-44a8-9aaf-2939a060a633",
+      "endpoints": [
+        {
+          "id": "53d77196-27b1-4d12-831e-9328bab3122c",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "alice-phone",
+        "software": [
+          {
+            "name=": "android-6"
+          }
+        ]
+      }
+    },
+    {
+      "id": "eeb24225-e1ce-48cc-949c-04d185b3093d",
+      "endpoints": [
+        {
+          "id": "1adc3b0f-d10b-451c-9471-e53d3e193b21",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "tv",
+        "software": [
+          {
+            "name=": "plex"
+          }
+        ]
+      }
+    },
+    {
+      "id": "8ee2703d-7bd5-4f1a-a691-831166e3c638",
+      "endpoints": [
+        {
+          "id": "dd13a3b5-aa91-49a5-a491-bc0b27f938d9",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "homepc",
+        "software": [
+          {
+            "name=": "windows-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "7251e370-2781-4c94-b83c-9dc77175d411",
+      "endpoints": [
+        {
+          "id": "9aa7abee-5afd-4e07-be4d-f9f550414b46",
+          "props": {}
+        },
+        {
+          "id": "24e9a917-7aed-474f-b253-de3d282d98d8",
+          "props": {}
+        },
+        {
+          "id": "106860d0-4d95-4566-b0f0-48b32be400bf",
+          "props": {}
+        },
+        {
+          "id": "68b81661-df33-419d-b62c-a9b0eeb4a3bb",
+          "props": {}
+        },
+        {
+          "id": "5b742898-e74c-435f-af8b-7c9e8d787d4f",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "edge",
+        "phys": "true",
+        "software": [
+          {
+            "name=": "freebsd-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bb5ff80c-6347-4e67-99f3-fdb48272d016",
+      "endpoints": [
+        {
+          "id": "1a53622a-af12-439f-ae78-0e8ede2d7608",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "srv0",
+        "software": [
+          {
+            "name=": "centos-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "4829ce98-9e0e-4c73-bb9f-06f420893819",
+      "endpoints": [
+        {
+          "id": "63276454-85d2-4e96-b808-15f6cedce5fb",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "srv1",
+        "software": [
+          {
+            "name=": "centos-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ef4302eb-c93c-411d-8ab0-e4b7da872a4e",
+      "endpoints": [
+        {
+          "id": "016f6267-ce3a-4d6f-9e9d-f51a3e34b80c",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "srv2",
+        "software": [
+          {
+            "name=": "centos-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b6da55dc-1a41-4b11-b8ec-0fb464f53500",
+      "endpoints": [
+        {
+          "id": "dbd53b82-8b33-45e9-b40f-65f8abcadf7f",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "srv3",
+        "software": [
+          {
+            "name=": "centos-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "8f929c3b-9579-4799-820b-bfbc9ff02746",
+      "endpoints": [
+        {
+          "id": "8c415691-aebf-43c4-917d-ab6c74eea780",
+          "props": {}
+        },
+        {
+          "id": "8f70691e-cb05-4a62-bb7a-9cd28313ddb7",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "firewall",
+        "software": [
+          {
+            "name=": "palo-alto"
+          }
+        ]
+      }
+    },
+    {
+      "id": "3c165ac1-cf87-452d-bcef-a82b29a645d3",
+      "endpoints": [
+        {
+          "id": "74e40c0a-63e4-4beb-bc20-05aaa9284528",
+          "props": {}
+        },
+        {
+          "id": "3a9fc110-99cd-4adf-a7c1-cca17cb25c56",
+          "props": {}
+        },
+        {
+          "id": "5ca63440-c3fc-421d-ab63-6dbe7ae81757",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "backbone",
+        "software": [
+          {
+            "name=": "cumulus"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f15a1d65-fb20-47a0-a1bd-df80ab4b4b97",
+      "endpoints": [
+        {
+          "id": "45345d80-5ee2-4640-956c-d1cb69c18eec",
+          "props": {}
+        },
+        {
+          "id": "156df2c2-31b3-4fc0-afdf-222623e21d26",
+          "props": {}
+        },
+        {
+          "id": "5adf099b-3e0a-474e-9fa8-0b261ae8d7db",
+          "props": {}
+        },
+        {
+          "id": "f076b896-5121-499b-86bc-99d2d323a20b",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "workgroup0",
+        "software": [
+          {
+            "name=": "cumulus"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ccad96e3-b9ec-43f5-ac73-880ded85057e",
+      "endpoints": [
+        {
+          "id": "5b809229-5d7f-4252-bb60-d85bd29f3a1f",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "workstation0",
+        "phys": "true",
+        "software": [
+          {
+            "name=": "windows-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "3cb0d744-ba16-4d88-ba17-ee82b5d75730",
+      "endpoints": [
+        {
+          "id": "a8d70572-dca8-48ce-85aa-f03ddcc6af1f",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "workstation1",
+        "phys": "true",
+        "software": [
+          {
+            "name=": "windows-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "46ade683-e79b-4d0f-96d3-c08f4eeeb75a",
+      "endpoints": [
+        {
+          "id": "7ebb1746-dfae-4d82-b1a0-0a5bc718f6a2",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "workstation2",
+        "phys": "true",
+        "software": [
+          {
+            "name=": "windows-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c427522e-55e7-413d-94a4-7bde82e7120f",
+      "endpoints": [
+        {
+          "id": "a2ecd6bf-d6b5-4545-a26f-b880fe869b3a",
+          "props": {}
+        },
+        {
+          "id": "0cdc1ba7-8de8-4f35-bf6b-e0bf5ee9729d",
+          "props": {}
+        },
+        {
+          "id": "9f600b1f-a6ef-4581-ab23-d20d46bb4512",
+          "props": {}
+        },
+        {
+          "id": "75e76f87-969b-4cfc-93f0-c4e8e84fd6af",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "workgroup1",
+        "software": [
+          {
+            "name=": "cumulus"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e26d964f-4184-450c-9d2c-0a139bd7982f",
+      "endpoints": [
+        {
+          "id": "1b9be342-cede-4086-a42d-446462a97920",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "workstation2",
+        "phys": "true",
+        "software": [
+          {
+            "name=": "windows-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b5a63566-057d-40ca-a3ad-3e3d864548ab",
+      "endpoints": [
+        {
+          "id": "ae0b047b-5671-4112-9aa1-45e877cd618e",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "workstation3",
+        "phys": "true",
+        "software": [
+          {
+            "name=": "windows-7"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b7d00c96-3df5-450d-bf56-6992785ace58",
+      "endpoints": [
+        {
+          "id": "66210fbe-0080-4819-903c-4802042b6657",
+          "props": {}
+        }
+      ],
+      "props": {
+        "name": "workstation4",
+        "phys": "true",
+        "software": [
+          {
+            "name=": "windows-7"
+          }
+        ]
+      }
+    }
+  ],
+  "links": [
+    {
+      "id": "2db32ade-4aee-4092-92f4-f756f53dc11a",
+      "endpoints": [
+        {
+          "id": "56903d85-48d3-4c69-9175-b1d3503f0b9b",
+          "props": {}
+        },
+        {
+          "id": "761455d5-489b-4282-b012-140629f0e879",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 2.5
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 7
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 3
+        }
+      }
+    },
+    {
+      "id": "35d9c9b4-31bb-4d5f-b8ee-c5fbfbe2b6d8",
+      "endpoints": [
+        {
+          "id": "be15a996-3e00-4c48-92a7-c699982f9a57",
+          "props": {}
+        },
+        {
+          "id": "15db64c0-deb2-4a6f-b7f9-d8b265a118f1",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 2.5
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 7
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 3
+        }
+      }
+    },
+    {
+      "id": "5bf6478b-7b6c-4e61-ab50-8b9605a4a87b",
+      "endpoints": [
+        {
+          "id": "631c903f-b2d6-4af7-8ec4-65ad405d5e29",
+          "props": {}
+        },
+        {
+          "id": "3fa4d7ec-0760-4e0f-9632-317ed0fc44b9",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 2.5
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 7
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 3
+        }
+      }
+    },
+    {
+      "id": "797a1727-d67d-4caa-96fb-60a7bd55d3d4",
+      "endpoints": [
+        {
+          "id": "1f9f886f-e97d-4fc8-a6c8-088812f2977a",
+          "props": {}
+        },
+        {
+          "id": "b37895e0-df80-4908-9ff9-f203e1c4efe6",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 1
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 27
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 10
+        }
+      }
+    },
+    {
+      "id": "ad46dcd9-a7af-42dd-9c00-58d7c7279782",
+      "endpoints": [
+        {
+          "id": "69ce11c6-7841-4bb8-9e0f-7ace714bc83e",
+          "props": {}
+        },
+        {
+          "id": "d58328d2-2601-4c2d-b718-d6248776e953",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 1
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 27
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 10
+        }
+      }
+    },
+    {
+      "id": "6a8a1c7a-6ff7-4290-bf2d-be74e6f242e2",
+      "endpoints": [
+        {
+          "id": "df6d4857-b5e5-45dd-927d-b218e3c5d0d1",
+          "props": {}
+        },
+        {
+          "id": "85ed698b-1cb7-48df-83d4-7ae5aaecf680",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 1
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 27
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 10
+        }
+      }
+    },
+    {
+      "id": "eb2f124b-1ea3-44a0-b6c8-eba5569cff5f",
+      "endpoints": [
+        {
+          "id": "c80313fb-9150-44c4-ad5a-e9a2fc48f83a",
+          "props": {}
+        },
+        {
+          "id": "1019d522-0d37-4ec5-a15f-1c0cc1678c6f",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 100
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 3
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 2
+        }
+      }
+    },
+    {
+      "id": "a542648e-57dc-42d1-95b4-8900177cb5a0",
+      "endpoints": [
+        {
+          "id": "cd1559b8-7abd-4739-a7aa-49ec0b5736c0",
+          "props": {}
+        },
+        {
+          "id": "855cf5cb-a67b-4cc7-885e-97dfedc161d5",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 25
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 11
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 4
+        }
+      }
+    },
+    {
+      "id": "12d5daa1-331d-405e-a295-be7759a1b73a",
+      "endpoints": [
+        {
+          "id": "aed6a40a-4e1c-4ded-8d93-ce699476135d",
+          "props": {}
+        },
+        {
+          "id": "06950637-b946-4d44-a171-05d083516584",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 100
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 5
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 2
+        }
+      }
+    },
+    {
+      "id": "8bd48384-2fcc-4612-a66b-fff001a398af",
+      "endpoints": [
+        {
+          "id": "53d77196-27b1-4d12-831e-9328bab3122c",
+          "props": {}
+        },
+        {
+          "id": "6e4f48d8-abc4-4cc8-a3c8-2886e7370474",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 100
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 8
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 3
+        }
+      }
+    },
+    {
+      "id": "f453bed2-9933-4818-ade2-534ae7f179df",
+      "endpoints": [
+        {
+          "id": "1adc3b0f-d10b-451c-9471-e53d3e193b21",
+          "props": {}
+        },
+        {
+          "id": "d0eb39b9-19be-4422-a023-980444b40e90",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 100
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 4
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 2
+        }
+      }
+    },
+    {
+      "id": "2dfc136c-d962-4692-8e58-405fc9f3a89c",
+      "endpoints": [
+        {
+          "id": "dd13a3b5-aa91-49a5-a491-bc0b27f938d9",
+          "props": {}
+        },
+        {
+          "id": "64a8a7f1-fdbb-404f-8ebb-0651eab03bac",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 1
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 0.1
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.1
+        }
+      }
+    },
+    {
+      "id": "59c5bd8c-2eff-41bc-9baa-e32cfa503a46",
+      "endpoints": [
+        {
+          "id": "9aa7abee-5afd-4e07-be4d-f9f550414b46",
+          "props": {}
+        },
+        {
+          "id": "308d3bfa-adc4-465b-bb5f-b71bce78d5e2",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 100
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 0.1
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.1
+        }
+      }
+    },
+    {
+      "id": "200c164b-4320-4c2d-af24-a9331f8437ca",
+      "endpoints": [
+        {
+          "id": "24e9a917-7aed-474f-b253-de3d282d98d8",
+          "props": {}
+        },
+        {
+          "id": "1a53622a-af12-439f-ae78-0e8ede2d7608",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 40
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 0.1
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.1
+        }
+      }
+    },
+    {
+      "id": "67e549f7-e548-4022-91ea-bfd8e7d89fce",
+      "endpoints": [
+        {
+          "id": "106860d0-4d95-4566-b0f0-48b32be400bf",
+          "props": {}
+        },
+        {
+          "id": "63276454-85d2-4e96-b808-15f6cedce5fb",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 40
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 0.1
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.1
+        }
+      }
+    },
+    {
+      "id": "7a63c04c-dc47-42b5-8a3d-bd7ecbb81dd4",
+      "endpoints": [
+        {
+          "id": "68b81661-df33-419d-b62c-a9b0eeb4a3bb",
+          "props": {}
+        },
+        {
+          "id": "016f6267-ce3a-4d6f-9e9d-f51a3e34b80c",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 40
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 0.1
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.1
+        }
+      }
+    },
+    {
+      "id": "8bc43123-667f-4589-8833-3d1c9f5f65ae",
+      "endpoints": [
+        {
+          "id": "5b742898-e74c-435f-af8b-7c9e8d787d4f",
+          "props": {}
+        },
+        {
+          "id": "dbd53b82-8b33-45e9-b40f-65f8abcadf7f",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 40
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 0.1
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.1
+        }
+      }
+    },
+    {
+      "id": "10f60740-fd37-4ee2-a053-f50c3d445ab2",
+      "endpoints": [
+        {
+          "id": "8c415691-aebf-43c4-917d-ab6c74eea780",
+          "props": {}
+        },
+        {
+          "id": "e356aafd-bbc0-4da3-9ab4-9b7588bda535",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 100
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 3
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.8
+        }
+      }
+    },
+    {
+      "id": "c32133f1-99d8-4ca8-a4af-b18c7acc9f9a",
+      "endpoints": [
+        {
+          "id": "74e40c0a-63e4-4beb-bc20-05aaa9284528",
+          "props": {}
+        },
+        {
+          "id": "8f70691e-cb05-4a62-bb7a-9cd28313ddb7",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 10
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 3
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.8
+        }
+      }
+    },
+    {
+      "id": "8f3a02c3-a01a-4663-b604-0a833cdf1c1d",
+      "endpoints": [
+        {
+          "id": "45345d80-5ee2-4640-956c-d1cb69c18eec",
+          "props": {}
+        },
+        {
+          "id": "3a9fc110-99cd-4adf-a7c1-cca17cb25c56",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 10
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 2
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.1
+        }
+      }
+    },
+    {
+      "id": "91d6d7c3-0a54-41fc-970f-343738d37aca",
+      "endpoints": [
+        {
+          "id": "156df2c2-31b3-4fc0-afdf-222623e21d26",
+          "props": {}
+        },
+        {
+          "id": "5b809229-5d7f-4252-bb60-d85bd29f3a1f",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 1
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 2
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.2
+        }
+      }
+    },
+    {
+      "id": "06065e19-2c69-417e-9845-c3b74673b876",
+      "endpoints": [
+        {
+          "id": "5adf099b-3e0a-474e-9fa8-0b261ae8d7db",
+          "props": {}
+        },
+        {
+          "id": "a8d70572-dca8-48ce-85aa-f03ddcc6af1f",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 1
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 2
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.2
+        }
+      }
+    },
+    {
+      "id": "af9f81ff-84fe-4f06-9082-1ff03ad35dd5",
+      "endpoints": [
+        {
+          "id": "f076b896-5121-499b-86bc-99d2d323a20b",
+          "props": {}
+        },
+        {
+          "id": "7ebb1746-dfae-4d82-b1a0-0a5bc718f6a2",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 1
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 2
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.2
+        }
+      }
+    },
+    {
+      "id": "38ac99b8-3b7e-4710-b46a-441d589b212a",
+      "endpoints": [
+        {
+          "id": "a2ecd6bf-d6b5-4545-a26f-b880fe869b3a",
+          "props": {}
+        },
+        {
+          "id": "5ca63440-c3fc-421d-ab63-6dbe7ae81757",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 10
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 2
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.1
+        }
+      }
+    },
+    {
+      "id": "3b34182e-cd9c-44f2-be6d-d0238d321fca",
+      "endpoints": [
+        {
+          "id": "0cdc1ba7-8de8-4f35-bf6b-e0bf5ee9729d",
+          "props": {}
+        },
+        {
+          "id": "1b9be342-cede-4086-a42d-446462a97920",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 1
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 2
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.2
+        }
+      }
+    },
+    {
+      "id": "1109b389-caa3-43e7-8b83-e56032192c17",
+      "endpoints": [
+        {
+          "id": "9f600b1f-a6ef-4581-ab23-d20d46bb4512",
+          "props": {}
+        },
+        {
+          "id": "ae0b047b-5671-4112-9aa1-45e877cd618e",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 1
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 2
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.2
+        }
+      }
+    },
+    {
+      "id": "f08ef5b9-4948-4b20-84d3-d180cfd02c0b",
+      "endpoints": [
+        {
+          "id": "75e76f87-969b-4cfc-93f0-c4e8e84fd6af",
+          "props": {}
+        },
+        {
+          "id": "66210fbe-0080-4819-903c-4802042b6657",
+          "props": {}
+        }
+      ],
+      "props": {
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 1
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 2
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.2
+        }
+      }
+    }
+  ],
+  "nets": null,
+  "props": {}
+}
