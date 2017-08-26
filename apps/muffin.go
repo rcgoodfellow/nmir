@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/rcgoodfellow/core/nmir"
+	"github.com/rcgoodfellow/nmir"
 	"github.com/rcgoodfellow/nmir/viz"
 )
 

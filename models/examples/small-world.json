@@ -1,19 +1,19 @@
 {
-  "id": "73243c22-fe93-4d7c-b4bd-01e7e9fce309",
+  "id": "fee15820-efdc-49ea-ac5a-05822b319c28",
   "nodes": [
     {
-      "id": "55afdd4e-4c90-4321-9704-984647f963ef",
+      "id": "5ca8f3f9-ae6e-4438-9e31-b4d9495f5330",
       "endpoints": [
         {
-          "id": "3438ef12-d79b-439b-a05d-0b303d325238",
+          "id": "56903d85-48d3-4c69-9175-b1d3503f0b9b",
           "props": {}
         },
         {
-          "id": "f1917595-d0db-48cd-878b-dc25ae1ec870",
+          "id": "3fa4d7ec-0760-4e0f-9632-317ed0fc44b9",
           "props": {}
         },
         {
-          "id": "d0e2ad8f-0105-4bf1-935b-041785a0e6d8",
+          "id": "1019d522-0d37-4ec5-a15f-1c0cc1678c6f",
           "props": {}
         }
       ],
@@ -27,22 +27,22 @@
       }
     },
     {
-      "id": "14ae68d0-f90c-4785-be58-6e87e6d4b1a0",
+      "id": "70cb919a-7ce6-49e1-897d-ef3c7dea6d89",
       "endpoints": [
         {
-          "id": "ecc1b4f3-7e82-433e-a0c7-7c8ece48baef",
+          "id": "761455d5-489b-4282-b012-140629f0e879",
           "props": {}
         },
         {
-          "id": "3e616178-14d2-45c8-af0d-03a8fd87f335",
+          "id": "be15a996-3e00-4c48-92a7-c699982f9a57",
           "props": {}
         },
         {
-          "id": "45e06bae-9e65-4912-93df-e1567564ffaf",
+          "id": "855cf5cb-a67b-4cc7-885e-97dfedc161d5",
           "props": {}
         },
         {
-          "id": "e9b56bad-7731-4c88-8aba-af429d642d48",
+          "id": "308d3bfa-adc4-465b-bb5f-b71bce78d5e2",
           "props": {}
         }
       ],
@@ -56,18 +56,18 @@
       }
     },
     {
-      "id": "aa3e7a30-df7a-46bd-ae47-dc3028f4837b",
+      "id": "72f3988d-7068-4e2f-8eb3-228f870cd49a",
       "endpoints": [
         {
-          "id": "dea9ebdc-e74f-4712-9abf-b93acd59fdbf",
+          "id": "15db64c0-deb2-4a6f-b7f9-d8b265a118f1",
           "props": {}
         },
         {
-          "id": "630ac990-7976-4a12-8293-70fc832b8ca3",
+          "id": "631c903f-b2d6-4af7-8ec4-65ad405d5e29",
           "props": {}
         },
         {
-          "id": "6d638b5a-8fdd-4b9a-bbec-7f6a90cf5a86",
+          "id": "e356aafd-bbc0-4da3-9ab4-9b7588bda535",
           "props": {}
         }
       ],
@@ -81,22 +81,22 @@
       }
     },
     {
-      "id": "3fdf16d8-a278-49aa-ab4a-727cc9617f4a",
+      "id": "0a8be060-53fc-4200-ad4b-6a6228af4d1d",
       "endpoints": [
         {
-          "id": "f91f1cc3-829b-4c7a-8eca-c147a12b2550",
+          "id": "b37895e0-df80-4908-9ff9-f203e1c4efe6",
           "props": {}
         },
         {
-          "id": "1ae1feef-27df-4a96-bd86-f94d05403e16",
+          "id": "d58328d2-2601-4c2d-b718-d6248776e953",
           "props": {}
         },
         {
-          "id": "dfd653ab-a17f-44ea-91e9-b753a6d27a34",
+          "id": "85ed698b-1cb7-48df-83d4-7ae5aaecf680",
           "props": {}
         },
         {
-          "id": "76fd7897-2a8d-4bb0-b4a4-4fff08d59d88",
+          "id": "c80313fb-9150-44c4-ad5a-e9a2fc48f83a",
           "props": {}
         }
       ],
@@ -110,10 +110,10 @@
       }
     },
     {
-      "id": "699d8b12-ce86-4fc1-b495-84580e80dcf8",
+      "id": "b944771b-8354-4f44-a7f7-9bf98ef51c31",
       "endpoints": [
         {
-          "id": "748d24a1-6d59-46a4-b0a5-8d8d38d0cc14",
+          "id": "1f9f886f-e97d-4fc8-a6c8-088812f2977a",
           "props": {}
         }
       ],
@@ -127,10 +127,10 @@
       }
     },
     {
-      "id": "7d6c58cd-f398-45e4-a5eb-30c4c29792fe",
+      "id": "c2e7ed26-f20b-41a2-ae5a-3c9bea4aa4dd",
       "endpoints": [
         {
-          "id": "c65c7a37-d947-4961-9109-423fbfd72438",
+          "id": "69ce11c6-7841-4bb8-9e0f-7ace714bc83e",
           "props": {}
         }
       ],
@@ -144,10 +144,10 @@
       }
     },
     {
-      "id": "7d788fe8-e58e-4759-855a-7a5510ba58ff",
+      "id": "c0a2af35-c4ba-49e0-811f-1bf49546b294",
       "endpoints": [
         {
-          "id": "1a5822a5-3b65-4eab-b227-815780d53527",
+          "id": "df6d4857-b5e5-45dd-927d-b218e3c5d0d1",
           "props": {}
         }
       ],
@@ -161,26 +161,26 @@
       }
     },
     {
-      "id": "d0e6916f-d648-4de3-a020-17a210b569ad",
+      "id": "86f81514-e4d4-4968-b7d4-2d3b3daea7ff",
       "endpoints": [
         {
-          "id": "0d96045e-6a1f-4739-a009-f12ffa48b3d8",
+          "id": "cd1559b8-7abd-4739-a7aa-49ec0b5736c0",
           "props": {}
         },
         {
-          "id": "d225c7f4-2070-4c5d-a56b-97d43ed1b529",
+          "id": "06950637-b946-4d44-a171-05d083516584",
           "props": {}
         },
         {
-          "id": "bd4ec12b-69bd-4b23-aea5-eec7f9c158e4",
+          "id": "6e4f48d8-abc4-4cc8-a3c8-2886e7370474",
           "props": {}
         },
         {
-          "id": "842d7732-52c3-4b75-b438-dd873542dda2",
+          "id": "d0eb39b9-19be-4422-a023-980444b40e90",
           "props": {}
         },
         {
-          "id": "2489f29d-1eb1-4764-926c-16dad7c2e65f",
+          "id": "64a8a7f1-fdbb-404f-8ebb-0651eab03bac",
           "props": {}
         }
       ],
@@ -194,10 +194,10 @@
       }
     },
     {
-      "id": "17c0b545-f0b9-4c2e-8e91-5d18f829cc38",
+      "id": "25f31ea2-b103-4456-b6d5-363287490b64",
       "endpoints": [
         {
-          "id": "b4f4249d-88a1-4f3d-b9f4-527885306bfc",
+          "id": "aed6a40a-4e1c-4ded-8d93-ce699476135d",
           "props": {}
         }
       ],
@@ -211,10 +211,10 @@
       }
     },
     {
-      "id": "55551b1a-4b6e-402e-9d39-24cf19c6f130",
+      "id": "064d3513-0569-44a8-9aaf-2939a060a633",
       "endpoints": [
         {
-          "id": "1d882542-544a-4cc4-9218-8525eb070820",
+          "id": "53d77196-27b1-4d12-831e-9328bab3122c",
           "props": {}
         }
       ],
@@ -228,10 +228,10 @@
       }
     },
     {
-      "id": "7a2fd0d0-e032-4d9c-b444-9ef3874b8fcd",
+      "id": "eeb24225-e1ce-48cc-949c-04d185b3093d",
       "endpoints": [
         {
-          "id": "b7df2f11-b716-48d6-a433-16b1d9a5abaa",
+          "id": "1adc3b0f-d10b-451c-9471-e53d3e193b21",
           "props": {}
         }
       ],
@@ -245,10 +245,10 @@
       }
     },
     {
-      "id": "f3272ee1-b1ac-4332-b700-ab7b3d54afc4",
+      "id": "8ee2703d-7bd5-4f1a-a691-831166e3c638",
       "endpoints": [
         {
-          "id": "3a5b5d03-1dc3-454a-869d-27d69b59b34c",
+          "id": "dd13a3b5-aa91-49a5-a491-bc0b27f938d9",
           "props": {}
         }
       ],
@@ -262,26 +262,26 @@
       }
     },
     {
-      "id": "c70b8ac1-736e-44bb-84ee-ef7da4bd2de8",
+      "id": "7251e370-2781-4c94-b83c-9dc77175d411",
       "endpoints": [
         {
-          "id": "3ff280c2-c702-49de-acd8-e45d70e91fac",
+          "id": "9aa7abee-5afd-4e07-be4d-f9f550414b46",
           "props": {}
         },
         {
-          "id": "4300e374-33bc-45c6-823d-586c2ca2f840",
+          "id": "24e9a917-7aed-474f-b253-de3d282d98d8",
           "props": {}
         },
         {
-          "id": "b5eb60c0-a4b7-4fd7-9794-fb5f99fe5d06",
+          "id": "106860d0-4d95-4566-b0f0-48b32be400bf",
           "props": {}
         },
         {
-          "id": "a8d4b132-b151-4da4-af6e-6852e56a5649",
+          "id": "68b81661-df33-419d-b62c-a9b0eeb4a3bb",
           "props": {}
         },
         {
-          "id": "3b61a92a-a08b-4344-954c-0cd7fd49e87f",
+          "id": "5b742898-e74c-435f-af8b-7c9e8d787d4f",
           "props": {}
         }
       ],
@@ -296,10 +296,10 @@
       }
     },
     {
-      "id": "8bdab6f2-1c14-4429-893a-9c7b72b4bccd",
+      "id": "bb5ff80c-6347-4e67-99f3-fdb48272d016",
       "endpoints": [
         {
-          "id": "6ddc96b1-696a-46db-9c42-7dec2f6abc6b",
+          "id": "1a53622a-af12-439f-ae78-0e8ede2d7608",
           "props": {}
         }
       ],
@@ -313,10 +313,10 @@
       }
     },
     {
-      "id": "4e601450-8fa9-4acf-ace3-16bd476998a2",
+      "id": "4829ce98-9e0e-4c73-bb9f-06f420893819",
       "endpoints": [
         {
-          "id": "b34f2245-f9ad-4742-a53a-643eff8874e3",
+          "id": "63276454-85d2-4e96-b808-15f6cedce5fb",
           "props": {}
         }
       ],
@@ -330,10 +330,10 @@
       }
     },
     {
-      "id": "a42b81f9-5751-4595-9d37-275be92a37f1",
+      "id": "ef4302eb-c93c-411d-8ab0-e4b7da872a4e",
       "endpoints": [
         {
-          "id": "18ca583a-a2bd-43eb-b9dd-1c148b80182f",
+          "id": "016f6267-ce3a-4d6f-9e9d-f51a3e34b80c",
           "props": {}
         }
       ],
@@ -347,10 +347,10 @@
       }
     },
     {
-      "id": "250fc684-d7d1-4019-b857-e514f0175a1f",
+      "id": "b6da55dc-1a41-4b11-b8ec-0fb464f53500",
       "endpoints": [
         {
-          "id": "a5a147b2-3039-438e-b352-5d28588d1d8f",
+          "id": "dbd53b82-8b33-45e9-b40f-65f8abcadf7f",
           "props": {}
         }
       ],
@@ -364,14 +364,14 @@
       }
     },
     {
-      "id": "bee818cb-2898-4f25-968c-43fbf8015d97",
+      "id": "8f929c3b-9579-4799-820b-bfbc9ff02746",
       "endpoints": [
         {
-          "id": "546d4086-1dc6-4e83-af66-82a322178639",
+          "id": "8c415691-aebf-43c4-917d-ab6c74eea780",
           "props": {}
         },
         {
-          "id": "163a02ab-9ac5-430d-aa56-2453b5763a71",
+          "id": "8f70691e-cb05-4a62-bb7a-9cd28313ddb7",
           "props": {}
         }
       ],
@@ -385,18 +385,18 @@
       }
     },
     {
-      "id": "92ca70bf-20a4-48fb-877c-dda5ef58147c",
+      "id": "3c165ac1-cf87-452d-bcef-a82b29a645d3",
       "endpoints": [
         {
-          "id": "4dee164f-efa2-49be-be0c-bbbab8bdabef",
+          "id": "74e40c0a-63e4-4beb-bc20-05aaa9284528",
           "props": {}
         },
         {
-          "id": "b57e28bb-3dcc-4d9f-84e2-728c25588035",
+          "id": "3a9fc110-99cd-4adf-a7c1-cca17cb25c56",
           "props": {}
         },
         {
-          "id": "2edc68b5-81f5-4a92-9fad-aab4f2802671",
+          "id": "5ca63440-c3fc-421d-ab63-6dbe7ae81757",
           "props": {}
         }
       ],
@@ -410,22 +410,22 @@
       }
     },
     {
-      "id": "4ee5a6f0-685c-4069-b1b9-894a2a396fa9",
+      "id": "f15a1d65-fb20-47a0-a1bd-df80ab4b4b97",
       "endpoints": [
         {
-          "id": "f9c56f4b-9ffe-43c0-9c73-0d16d2c5d882",
+          "id": "45345d80-5ee2-4640-956c-d1cb69c18eec",
           "props": {}
         },
         {
-          "id": "f5e6950d-8671-4518-80a2-341b06d7f573",
+          "id": "156df2c2-31b3-4fc0-afdf-222623e21d26",
           "props": {}
         },
         {
-          "id": "47fe4825-41b2-4184-9564-ef4651da91f6",
+          "id": "5adf099b-3e0a-474e-9fa8-0b261ae8d7db",
           "props": {}
         },
         {
-          "id": "bcd940bb-9ed2-4c1c-8474-c6b0be33d1bd",
+          "id": "f076b896-5121-499b-86bc-99d2d323a20b",
           "props": {}
         }
       ],
@@ -439,10 +439,10 @@
       }
     },
     {
-      "id": "b7169380-e812-4553-8e94-1716cc31b321",
+      "id": "ccad96e3-b9ec-43f5-ac73-880ded85057e",
       "endpoints": [
         {
-          "id": "4829836f-bd93-404e-9812-49760e25b674",
+          "id": "5b809229-5d7f-4252-bb60-d85bd29f3a1f",
           "props": {}
         }
       ],
@@ -457,10 +457,10 @@
       }
     },
     {
-      "id": "bc553755-8d8a-42cd-b93c-4a09395fa87e",
+      "id": "3cb0d744-ba16-4d88-ba17-ee82b5d75730",
       "endpoints": [
         {
-          "id": "36db813f-6654-4213-b4b5-a621bfe23579",
+          "id": "a8d70572-dca8-48ce-85aa-f03ddcc6af1f",
           "props": {}
         }
       ],
@@ -475,10 +475,10 @@
       }
     },
     {
-      "id": "e7514d45-e26b-4cc9-8732-12e7cb489d86",
+      "id": "46ade683-e79b-4d0f-96d3-c08f4eeeb75a",
       "endpoints": [
         {
-          "id": "41ecf4bb-f9b7-4608-adc5-9d9aa414d3c8",
+          "id": "7ebb1746-dfae-4d82-b1a0-0a5bc718f6a2",
           "props": {}
         }
       ],
@@ -493,22 +493,22 @@
       }
     },
     {
-      "id": "b1e909b0-8bf3-4916-90e9-36d1b44be607",
+      "id": "c427522e-55e7-413d-94a4-7bde82e7120f",
       "endpoints": [
         {
-          "id": "2770a44d-d080-4dce-8121-0240f5ec7a24",
+          "id": "a2ecd6bf-d6b5-4545-a26f-b880fe869b3a",
           "props": {}
         },
         {
-          "id": "8f89929e-967c-40c2-a5d3-4d85edf1c816",
+          "id": "0cdc1ba7-8de8-4f35-bf6b-e0bf5ee9729d",
           "props": {}
         },
         {
-          "id": "02dcb86d-d7ab-43f8-9666-ee9b0bd8a374",
+          "id": "9f600b1f-a6ef-4581-ab23-d20d46bb4512",
           "props": {}
         },
         {
-          "id": "a5cc67d0-2ffc-4ecd-a890-798a9954ab6a",
+          "id": "75e76f87-969b-4cfc-93f0-c4e8e84fd6af",
           "props": {}
         }
       ],
@@ -522,10 +522,10 @@
       }
     },
     {
-      "id": "109cdc13-f875-409a-9dab-850c145e0cae",
+      "id": "e26d964f-4184-450c-9d2c-0a139bd7982f",
       "endpoints": [
         {
-          "id": "7857a549-8f09-43d6-a9e0-2697fc045c2a",
+          "id": "1b9be342-cede-4086-a42d-446462a97920",
           "props": {}
         }
       ],
@@ -540,10 +540,10 @@
       }
     },
     {
-      "id": "dc4d2c18-bf7f-4e01-ba45-7a7f6a7949e9",
+      "id": "b5a63566-057d-40ca-a3ad-3e3d864548ab",
       "endpoints": [
         {
-          "id": "dcab1c72-3c8f-4bec-9e62-86a48476c577",
+          "id": "ae0b047b-5671-4112-9aa1-45e877cd618e",
           "props": {}
         }
       ],
@@ -558,10 +558,10 @@
       }
     },
     {
-      "id": "4ffc9d50-ff60-4931-bd83-2ced20792dae",
+      "id": "b7d00c96-3df5-450d-bf56-6992785ace58",
       "endpoints": [
         {
-          "id": "22287c86-bb48-4fc1-ab26-68b1e834cb8f",
+          "id": "66210fbe-0080-4819-903c-4802042b6657",
           "props": {}
         }
       ],
@@ -578,435 +578,759 @@
   ],
   "links": [
     {
-      "id": "fd596f3d-5c66-4378-96f3-42329b6be6b9",
+      "id": "2db32ade-4aee-4092-92f4-f756f53dc11a",
       "endpoints": [
         {
-          "id": "3438ef12-d79b-439b-a05d-0b303d325238",
+          "id": "56903d85-48d3-4c69-9175-b1d3503f0b9b",
           "props": {}
         },
         {
-          "id": "ecc1b4f3-7e82-433e-a0c7-7c8ece48baef",
+          "id": "761455d5-489b-4282-b012-140629f0e879",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 2.5
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 7
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 3
+        }
       }
     },
     {
-      "id": "8cac630f-8e1a-49be-8284-e9300b9063ff",
+      "id": "35d9c9b4-31bb-4d5f-b8ee-c5fbfbe2b6d8",
       "endpoints": [
         {
-          "id": "3e616178-14d2-45c8-af0d-03a8fd87f335",
+          "id": "be15a996-3e00-4c48-92a7-c699982f9a57",
           "props": {}
         },
         {
-          "id": "dea9ebdc-e74f-4712-9abf-b93acd59fdbf",
+          "id": "15db64c0-deb2-4a6f-b7f9-d8b265a118f1",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 2.5
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 7
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 3
+        }
       }
     },
     {
-      "id": "3c6084bf-1367-4ca9-b0d7-d416e8aee169",
+      "id": "5bf6478b-7b6c-4e61-ab50-8b9605a4a87b",
       "endpoints": [
         {
-          "id": "630ac990-7976-4a12-8293-70fc832b8ca3",
+          "id": "631c903f-b2d6-4af7-8ec4-65ad405d5e29",
           "props": {}
         },
         {
-          "id": "f1917595-d0db-48cd-878b-dc25ae1ec870",
+          "id": "3fa4d7ec-0760-4e0f-9632-317ed0fc44b9",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 2.5
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 7
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 3
+        }
       }
     },
     {
-      "id": "98c5865b-7d08-4321-9f26-31021f69ec5c",
+      "id": "797a1727-d67d-4caa-96fb-60a7bd55d3d4",
       "endpoints": [
         {
-          "id": "748d24a1-6d59-46a4-b0a5-8d8d38d0cc14",
+          "id": "1f9f886f-e97d-4fc8-a6c8-088812f2977a",
           "props": {}
         },
         {
-          "id": "f91f1cc3-829b-4c7a-8eca-c147a12b2550",
+          "id": "b37895e0-df80-4908-9ff9-f203e1c4efe6",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 1
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 27
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 10
+        }
       }
     },
     {
-      "id": "1cfb3ff0-282d-4a96-becc-a8727dde77a5",
+      "id": "ad46dcd9-a7af-42dd-9c00-58d7c7279782",
       "endpoints": [
         {
-          "id": "c65c7a37-d947-4961-9109-423fbfd72438",
+          "id": "69ce11c6-7841-4bb8-9e0f-7ace714bc83e",
           "props": {}
         },
         {
-          "id": "1ae1feef-27df-4a96-bd86-f94d05403e16",
+          "id": "d58328d2-2601-4c2d-b718-d6248776e953",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 1
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 27
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 10
+        }
       }
     },
     {
-      "id": "beb6edaf-7903-435e-8fda-ccd92f351337",
+      "id": "6a8a1c7a-6ff7-4290-bf2d-be74e6f242e2",
       "endpoints": [
         {
-          "id": "1a5822a5-3b65-4eab-b227-815780d53527",
+          "id": "df6d4857-b5e5-45dd-927d-b218e3c5d0d1",
           "props": {}
         },
         {
-          "id": "dfd653ab-a17f-44ea-91e9-b753a6d27a34",
+          "id": "85ed698b-1cb7-48df-83d4-7ae5aaecf680",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 1
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 27
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 10
+        }
       }
     },
     {
-      "id": "bb0fc7fb-156a-464e-b087-a1077add5473",
+      "id": "eb2f124b-1ea3-44a0-b6c8-eba5569cff5f",
       "endpoints": [
         {
-          "id": "76fd7897-2a8d-4bb0-b4a4-4fff08d59d88",
+          "id": "c80313fb-9150-44c4-ad5a-e9a2fc48f83a",
           "props": {}
         },
         {
-          "id": "d0e2ad8f-0105-4bf1-935b-041785a0e6d8",
+          "id": "1019d522-0d37-4ec5-a15f-1c0cc1678c6f",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 100
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 3
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 2
+        }
       }
     },
     {
-      "id": "03b033cf-88e4-456d-8ee8-079ed9d28746",
+      "id": "a542648e-57dc-42d1-95b4-8900177cb5a0",
       "endpoints": [
         {
-          "id": "0d96045e-6a1f-4739-a009-f12ffa48b3d8",
+          "id": "cd1559b8-7abd-4739-a7aa-49ec0b5736c0",
           "props": {}
         },
         {
-          "id": "45e06bae-9e65-4912-93df-e1567564ffaf",
+          "id": "855cf5cb-a67b-4cc7-885e-97dfedc161d5",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 25
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 11
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 4
+        }
       }
     },
     {
-      "id": "b84e4d19-5f39-4029-9b7f-78a9b2410efd",
+      "id": "12d5daa1-331d-405e-a295-be7759a1b73a",
       "endpoints": [
         {
-          "id": "b4f4249d-88a1-4f3d-b9f4-527885306bfc",
+          "id": "aed6a40a-4e1c-4ded-8d93-ce699476135d",
           "props": {}
         },
         {
-          "id": "d225c7f4-2070-4c5d-a56b-97d43ed1b529",
+          "id": "06950637-b946-4d44-a171-05d083516584",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 100
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 5
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 2
+        }
       }
     },
     {
-      "id": "e1aa43e2-949a-4f84-abf2-4d05bd5f93cf",
+      "id": "8bd48384-2fcc-4612-a66b-fff001a398af",
       "endpoints": [
         {
-          "id": "1d882542-544a-4cc4-9218-8525eb070820",
+          "id": "53d77196-27b1-4d12-831e-9328bab3122c",
           "props": {}
         },
         {
-          "id": "bd4ec12b-69bd-4b23-aea5-eec7f9c158e4",
+          "id": "6e4f48d8-abc4-4cc8-a3c8-2886e7370474",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 100
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 8
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 3
+        }
       }
     },
     {
-      "id": "ce29fade-8dcd-4b6a-a2d5-356a16cefb77",
+      "id": "f453bed2-9933-4818-ade2-534ae7f179df",
       "endpoints": [
         {
-          "id": "b7df2f11-b716-48d6-a433-16b1d9a5abaa",
+          "id": "1adc3b0f-d10b-451c-9471-e53d3e193b21",
           "props": {}
         },
         {
-          "id": "842d7732-52c3-4b75-b438-dd873542dda2",
+          "id": "d0eb39b9-19be-4422-a023-980444b40e90",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 100
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 4
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 2
+        }
       }
     },
     {
-      "id": "557ce1d1-3478-4937-8eb3-52ad2913c887",
+      "id": "2dfc136c-d962-4692-8e58-405fc9f3a89c",
       "endpoints": [
         {
-          "id": "3a5b5d03-1dc3-454a-869d-27d69b59b34c",
+          "id": "dd13a3b5-aa91-49a5-a491-bc0b27f938d9",
           "props": {}
         },
         {
-          "id": "2489f29d-1eb1-4764-926c-16dad7c2e65f",
+          "id": "64a8a7f1-fdbb-404f-8ebb-0651eab03bac",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 1
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 0.1
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.1
+        }
       }
     },
     {
-      "id": "c64891d4-6932-4efa-bbd1-1bdba09a3768",
+      "id": "59c5bd8c-2eff-41bc-9baa-e32cfa503a46",
       "endpoints": [
         {
-          "id": "3ff280c2-c702-49de-acd8-e45d70e91fac",
+          "id": "9aa7abee-5afd-4e07-be4d-f9f550414b46",
           "props": {}
         },
         {
-          "id": "e9b56bad-7731-4c88-8aba-af429d642d48",
+          "id": "308d3bfa-adc4-465b-bb5f-b71bce78d5e2",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 100
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 0.1
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.1
+        }
       }
     },
     {
-      "id": "483ed0a9-beba-4ef7-8449-fc6dd4bf5e13",
+      "id": "200c164b-4320-4c2d-af24-a9331f8437ca",
       "endpoints": [
         {
-          "id": "4300e374-33bc-45c6-823d-586c2ca2f840",
+          "id": "24e9a917-7aed-474f-b253-de3d282d98d8",
           "props": {}
         },
         {
-          "id": "6ddc96b1-696a-46db-9c42-7dec2f6abc6b",
+          "id": "1a53622a-af12-439f-ae78-0e8ede2d7608",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 40
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 0.1
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.1
+        }
       }
     },
     {
-      "id": "f03d6372-cb56-459c-954d-f24cc1c4f295",
+      "id": "67e549f7-e548-4022-91ea-bfd8e7d89fce",
       "endpoints": [
         {
-          "id": "b5eb60c0-a4b7-4fd7-9794-fb5f99fe5d06",
+          "id": "106860d0-4d95-4566-b0f0-48b32be400bf",
           "props": {}
         },
         {
-          "id": "b34f2245-f9ad-4742-a53a-643eff8874e3",
+          "id": "63276454-85d2-4e96-b808-15f6cedce5fb",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 40
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 0.1
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.1
+        }
       }
     },
     {
-      "id": "7fdf9d8d-96f4-4c30-98eb-7b2d1846d184",
+      "id": "7a63c04c-dc47-42b5-8a3d-bd7ecbb81dd4",
       "endpoints": [
         {
-          "id": "a8d4b132-b151-4da4-af6e-6852e56a5649",
+          "id": "68b81661-df33-419d-b62c-a9b0eeb4a3bb",
           "props": {}
         },
         {
-          "id": "18ca583a-a2bd-43eb-b9dd-1c148b80182f",
+          "id": "016f6267-ce3a-4d6f-9e9d-f51a3e34b80c",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 40
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 0.1
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.1
+        }
       }
     },
     {
-      "id": "5d1168c2-04b4-4265-b55c-019497d8db27",
+      "id": "8bc43123-667f-4589-8833-3d1c9f5f65ae",
       "endpoints": [
         {
-          "id": "3b61a92a-a08b-4344-954c-0cd7fd49e87f",
+          "id": "5b742898-e74c-435f-af8b-7c9e8d787d4f",
           "props": {}
         },
         {
-          "id": "a5a147b2-3039-438e-b352-5d28588d1d8f",
+          "id": "dbd53b82-8b33-45e9-b40f-65f8abcadf7f",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 40
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 0.1
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.1
+        }
       }
     },
     {
-      "id": "f86ed78c-6d6c-467b-bd62-ed06951ac365",
+      "id": "10f60740-fd37-4ee2-a053-f50c3d445ab2",
       "endpoints": [
         {
-          "id": "546d4086-1dc6-4e83-af66-82a322178639",
+          "id": "8c415691-aebf-43c4-917d-ab6c74eea780",
           "props": {}
         },
         {
-          "id": "6d638b5a-8fdd-4b9a-bbec-7f6a90cf5a86",
+          "id": "e356aafd-bbc0-4da3-9ab4-9b7588bda535",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "mbps",
+          "value-": 100
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 3
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.8
+        }
       }
     },
     {
-      "id": "fe549478-8cd6-4595-84a6-a1786176352a",
+      "id": "c32133f1-99d8-4ca8-a4af-b18c7acc9f9a",
       "endpoints": [
         {
-          "id": "4dee164f-efa2-49be-be0c-bbbab8bdabef",
+          "id": "74e40c0a-63e4-4beb-bc20-05aaa9284528",
           "props": {}
         },
         {
-          "id": "163a02ab-9ac5-430d-aa56-2453b5763a71",
+          "id": "8f70691e-cb05-4a62-bb7a-9cd28313ddb7",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 10
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 3
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.8
+        }
       }
     },
     {
-      "id": "e79303f4-52aa-4a55-a9f3-2969e7e15d4e",
+      "id": "8f3a02c3-a01a-4663-b604-0a833cdf1c1d",
       "endpoints": [
         {
-          "id": "f9c56f4b-9ffe-43c0-9c73-0d16d2c5d882",
+          "id": "45345d80-5ee2-4640-956c-d1cb69c18eec",
           "props": {}
         },
         {
-          "id": "b57e28bb-3dcc-4d9f-84e2-728c25588035",
+          "id": "3a9fc110-99cd-4adf-a7c1-cca17cb25c56",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 10
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 2
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.1
+        }
       }
     },
     {
-      "id": "c96be70f-10d3-4412-bb81-9c6e96767319",
+      "id": "91d6d7c3-0a54-41fc-970f-343738d37aca",
       "endpoints": [
         {
-          "id": "f5e6950d-8671-4518-80a2-341b06d7f573",
+          "id": "156df2c2-31b3-4fc0-afdf-222623e21d26",
           "props": {}
         },
         {
-          "id": "4829836f-bd93-404e-9812-49760e25b674",
+          "id": "5b809229-5d7f-4252-bb60-d85bd29f3a1f",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 1
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 2
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.2
+        }
       }
     },
     {
-      "id": "2cf0798e-989d-4fb3-bc17-091ae5f35236",
+      "id": "06065e19-2c69-417e-9845-c3b74673b876",
       "endpoints": [
         {
-          "id": "47fe4825-41b2-4184-9564-ef4651da91f6",
+          "id": "5adf099b-3e0a-474e-9fa8-0b261ae8d7db",
           "props": {}
         },
         {
-          "id": "36db813f-6654-4213-b4b5-a621bfe23579",
+          "id": "a8d70572-dca8-48ce-85aa-f03ddcc6af1f",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 1
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 2
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.2
+        }
       }
     },
     {
-      "id": "e216ab1b-08d3-4c25-95da-b27eab774ca3",
+      "id": "af9f81ff-84fe-4f06-9082-1ff03ad35dd5",
       "endpoints": [
         {
-          "id": "bcd940bb-9ed2-4c1c-8474-c6b0be33d1bd",
+          "id": "f076b896-5121-499b-86bc-99d2d323a20b",
           "props": {}
         },
         {
-          "id": "41ecf4bb-f9b7-4608-adc5-9d9aa414d3c8",
+          "id": "7ebb1746-dfae-4d82-b1a0-0a5bc718f6a2",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 1
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 2
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.2
+        }
       }
     },
     {
-      "id": "a9422754-b34c-4f64-860b-8e2f238c68f4",
+      "id": "38ac99b8-3b7e-4710-b46a-441d589b212a",
       "endpoints": [
         {
-          "id": "2770a44d-d080-4dce-8121-0240f5ec7a24",
+          "id": "a2ecd6bf-d6b5-4545-a26f-b880fe869b3a",
           "props": {}
         },
         {
-          "id": "2edc68b5-81f5-4a92-9fad-aab4f2802671",
+          "id": "5ca63440-c3fc-421d-ab63-6dbe7ae81757",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 10
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 2
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.1
+        }
       }
     },
     {
-      "id": "4a759f3a-6f58-4b23-a403-0498610e8c59",
+      "id": "3b34182e-cd9c-44f2-be6d-d0238d321fca",
       "endpoints": [
         {
-          "id": "8f89929e-967c-40c2-a5d3-4d85edf1c816",
+          "id": "0cdc1ba7-8de8-4f35-bf6b-e0bf5ee9729d",
           "props": {}
         },
         {
-          "id": "7857a549-8f09-43d6-a9e0-2697fc045c2a",
+          "id": "1b9be342-cede-4086-a42d-446462a97920",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 1
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 2
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.2
+        }
       }
     },
     {
-      "id": "d1ac1e92-dd42-4165-b70f-f2b2ae1e5756",
+      "id": "1109b389-caa3-43e7-8b83-e56032192c17",
       "endpoints": [
         {
-          "id": "02dcb86d-d7ab-43f8-9666-ee9b0bd8a374",
+          "id": "9f600b1f-a6ef-4581-ab23-d20d46bb4512",
           "props": {}
         },
         {
-          "id": "dcab1c72-3c8f-4bec-9e62-86a48476c577",
+          "id": "ae0b047b-5671-4112-9aa1-45e877cd618e",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 1
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 2
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.2
+        }
       }
     },
     {
-      "id": "716fe044-76c4-4716-aa31-6198ad5aed47",
+      "id": "f08ef5b9-4948-4b20-84d3-d180cfd02c0b",
       "endpoints": [
         {
-          "id": "a5cc67d0-2ffc-4ecd-a890-798a9954ab6a",
+          "id": "75e76f87-969b-4cfc-93f0-c4e8e84fd6af",
           "props": {}
         },
         {
-          "id": "22287c86-bb48-4fc1-ab26-68b1e834cb8f",
+          "id": "66210fbe-0080-4819-903c-4802042b6657",
           "props": {}
         }
       ],
       "props": {
-        "local": true
+        "bandwidth": {
+          "unit": "gbps",
+          "value-": 1
+        },
+        "latency": {
+          "unit": "ms",
+          "value+": 2
+        },
+        "local": true,
+        "loss": {
+          "unit": "%",
+          "value-": 0.2
+        }
       }
     }
   ],
