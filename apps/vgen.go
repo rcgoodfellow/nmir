@@ -10,8 +10,8 @@
 package main
 
 import (
-	"github.com/deter-project/testbed/core/nmir"
-	"github.com/deter-project/testbed/core/nmir/viz"
+	"github.com/rcgoodfellow/nmir"
+	"github.com/rcgoodfellow/nmir/viz"
 	"log"
 	"os"
 	"path"

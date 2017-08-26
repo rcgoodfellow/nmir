@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/deter-project/testbed/core/nmir"
-	"github.com/deter-project/testbed/core/nmir/viz"
+	"github.com/rcgoodfellow/core/nmir"
+	"github.com/rcgoodfellow/nmir/viz"
 )
 
 func main() {

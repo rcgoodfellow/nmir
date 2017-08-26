@@ -13,9 +13,9 @@ package main
 import (
 	"database/sql"
 	"encoding/json"
-	"github.com/deter-project/testbed/core/nmir"
-	"github.com/deter-project/testbed/core/nmir/viz"
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/rcgoodfellow/nmir/viz"
+	"github.com/rcgoodfellownmir"
 	"io/ioutil"
 	"log"
 	"os"

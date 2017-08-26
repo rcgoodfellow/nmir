@@ -1,7 +1,7 @@
 package models
 
 import (
-	"github.com/deter-project/testbed/core/nmir"
+	"github.com/rcgoodfellow/nmir"
 )
 
 func Tutorial_small() *nmir.Net {

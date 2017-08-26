@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/deter-project/testbed/core/nmir/models"
-	"github.com/deter-project/testbed/core/nmir/viz"
+	"github.com/rcgoodfellow/nmir/models"
+	"github.com/rcgoodfellow/nmir/viz"
 	"os"
 )
 

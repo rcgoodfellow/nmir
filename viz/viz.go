@@ -16,7 +16,7 @@ package viz
 import (
 	"fmt"
 	"github.com/ajstarks/svgo"
-	"github.com/deter-project/testbed/core/nmir"
+	"github.com/rcgoodfellow/nmir"
 	"math"
 	"os"
 )

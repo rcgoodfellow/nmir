@@ -2,8 +2,8 @@ package nmir_test
 
 import (
 	"encoding/json"
-	"github.com/deter-project/testbed/core/nmir"
-	"github.com/deter-project/testbed/core/nmir/viz"
+	"github.com/rcgoodfellow/nmir"
+	"github.com/rcgoodfellow/nmir/viz"
 	"io/ioutil"
 	"testing"
 )

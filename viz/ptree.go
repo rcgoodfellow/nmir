@@ -19,7 +19,7 @@
 package viz
 
 import (
-	"github.com/deter-project/testbed/core/nmir"
+	"github.com/rcgoodfellow/nmir"
 )
 
 const (

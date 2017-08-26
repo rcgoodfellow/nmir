@@ -2,7 +2,7 @@ package models
 
 import (
 	"fmt"
-	"github.com/deter-project/testbed/core/nmir"
+	"github.com/rcgoodfellow/nmir"
 	"github.com/satori/go.uuid"
 )
 
